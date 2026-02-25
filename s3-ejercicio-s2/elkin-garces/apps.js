@@ -1,10 +1,10 @@
-let elementos = document.getElementsByClassName("mi-clase");
+let elementos = document.getElementsByClassName("mi elemento");
 console.log(elementos);
 
 elementos.innerHTML= "hola mundo";
 elementos.style.color = "red";
 
-let elementos = document.getElementsByClassName("mi-clase");
+let elementos = document.getElementsByClassName("mi clase");
 console.log(elementos);
 
 
