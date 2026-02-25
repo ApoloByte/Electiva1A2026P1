@@ -9,8 +9,9 @@ let elementos = document.getElementsByClassName("mi clase");
 console.log(elementos);
 
 for (var i =0; i < elementos.length; i++) { 
-    elementos[i].innerHTML = "nuevo contenido";
+    elementos[i].innerHTML = "Amazing";
 }
-for (var i =0; i &lt < elementos.length; i++) { 
-    elementos[i].innerHTML = "nuevo contenido";
+for (var i =0; i
+     < elementos.length; i++) { 
+    elementos[i].style.color = "green";
 }
