@@ -10,7 +10,7 @@ let resultado3 = (3 + 2) * 10 / 2;
 console.log(resultado3)
 
 let edad = 15
-let nombre = "juan"
+let nombre = "Yeferson Gaviria"
 let blanco = false
 let moto = null
 let telefono;
