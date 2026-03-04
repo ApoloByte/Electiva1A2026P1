@@ -1,0 +1,68 @@
+
+
+¿QUÉ ES GIT?
+
+Git es un sistema de control de versiones distribuido que permite rastrear cambios en los archivos de un proyecto a lo largo del tiempo.
+Facilita el trabajo en equipo y permite volver a versiones anteriores cuando sea necesario.
+Fue creado por Linus Torvalds en 2005.
+
+
+¿QUÉ ES GITHUB?
+
+GitHub es una plataforma basada en la nube que permite almacenar, gestionar y colaborar en proyectos que utilizan Git.
+Permite trabajar en equipo mediante repositorios remotos.
+
+
+RELACIÓN ENTRE GIT Y GITHUB
+
+Git es la herramienta que maneja el control de versiones de forma local.
+GitHub es el servicio en línea que aloja los repositorios Git.
+
+En resumen: Git controla las versiones y GitHub permite compartir y colaborar.
+
+
+¿QUÉ ES EL .GITIGNORE?
+
+Es un archivo de texto que indica a Git qué archivos o carpetas debe ignorar y no incluir en el control de versiones.
+
+Ejemplos comunes:
+
+* node_modules/
+* .env
+* Archivos temporales
+* Archivos compilados
+
+
+COMANDOS BÁSICOS DE GIT
+
+Gestión de ramas:
+git branch → Listar ramas
+git checkout <rama> → Cambiar de rama
+git switch <rama> → Cambiar de rama (forma moderna)
+git merge <rama> → Combinar ramas
+
+Repositorios remotos:
+git remote add origin <url> → Agregar repositorio remoto
+git remote set-url origin <url> → Cambiar la URL del remoto
+git clone <url> → Clonar repositorio remoto
+git pull origin <rama> → Traer cambios y fusionarlos
+git push origin <rama> → Subir cambios al remoto
+
+Gestión de cambios:
+git add <archivo> → Agregar archivos al staging
+git status → Ver estado de los archivos
+git diff → Ver cambios no agregados
+git commit -m "mensaje" → Crear commit
+git commit --amend → Modificar último commit
+
+Historial:
+git log → Ver historial de commits
+
+Guardado temporal:
+git stash → Guardar cambios sin hacer commit
+git stash pop → Recuperar y eliminar el último stash
+
+Deshacer cambios:
+git reset --soft HEAD~1 → Deshacer último commit sin perder cambios
+
+

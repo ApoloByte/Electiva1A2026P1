@@ -1,0 +1,182 @@
+#  Fundamentos de JavaScript
+
+#  1. Objeto Math
+
+El objeto **Math** es un objeto incorporado que permite realizar operaciones matemáticas sin crear instancias.
+
+##  Propiedades
+- `Math.PI`
+- `Math.E`
+- `Math.SQRT2`
+
+## Funciones principales
+- `Math.round(x)`
+- `Math.floor(x)`
+- `Math.ceil(x)`
+- `Math.abs(x)`
+- `Math.pow(x, y)`
+- `Math.sqrt(x)`
+- `Math.random()`
+- `Math.max()`
+- `Math.min()`
+
+##  Ejemplo
+```js
+let numero = 4.7;
+
+console.log(Math.round(numero));
+console.log(Math.floor(numero));
+console.log(Math.ceil(numero));
+console.log(Math.sqrt(25));
+console.log(Math.pow(2,3));
+console.log(Math.random());
+```
+
+
+
+#  2. Funciones en JavaScript
+
+Una función es un bloque de código reutilizable diseñado para ejecutar una tarea.
+
+## Tipos
+
+### Función declarada
+```js
+function saludar(){
+  console.log("Hola");
+}
+saludar();
+```
+
+### Función con parámetros
+```js
+function suma(a,b){
+  return a + b;
+}
+console.log(suma(3,5));
+```
+
+### Función anónima
+```js
+const saludo = function(){
+  console.log("Hola mundo");
+};
+saludo();
+```
+
+### Arrow function
+```js
+const multiplicar = (a,b) => a*b;
+console.log(multiplicar(2,3));
+```
+
+
+#  3. Funciones asíncronas
+
+Permiten ejecutar tareas que tardan tiempo sin bloquear el programa.
+
+##  Conceptos
+- Callbacks
+- Promises
+- Async/Await
+
+## Ejemplo Promise
+```js
+const promesa = new Promise((resolve,reject)=>{
+  setTimeout(()=>{
+    resolve("Datos recibidos");
+  },2000);
+});
+
+promesa.then(data=>console.log(data));
+```
+
+## Ejemplo async/await
+```js
+async function obtenerDatos(){
+  let respuesta = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+  let datos = await respuesta.json();
+  console.log(datos);
+}
+obtenerDatos();
+```
+
+
+#  4. Ciclos
+
+##  FOR
+```js
+for(let i=0; i<5; i++){
+  console.log(i);
+}
+```
+
+##  WHILE
+```js
+let i = 0;
+while(i<5){
+  console.log(i);
+  i++;
+}
+```
+
+##  DO WHILE
+```js
+let j = 0;
+do{
+  console.log(j);
+  j++;
+}while(j<5);
+```
+
+
+# 5. Arreglos
+
+Un arreglo permite almacenar múltiples valores en una sola variable.
+
+##  Ejemplo
+```js
+let frutas = ["manzana","pera","uva"];
+```
+
+##  Métodos principales
+
+### Manipulación
+```js
+frutas.push("mango");
+frutas.pop();
+frutas.unshift("sandia");
+frutas.shift();
+```
+
+### Búsqueda
+```js
+console.log(frutas.indexOf("pera"));
+console.log(frutas.includes("uva"));
+```
+
+### Recorrido
+```js
+frutas.forEach(fruta=>console.log(fruta));
+
+let mayus = frutas.map(f=>f.toUpperCase());
+console.log(mayus);
+
+let filtrado = frutas.filter(f=>f.length>4);
+console.log(filtrado);
+```
+
+### Reduce
+```js
+let numeros = [1,2,3,4];
+let suma = numeros.reduce((acum,n)=>acum+n,0);
+console.log(suma);
+```
+
+### Otros
+```js
+console.log(frutas.length);
+console.log(frutas.slice(0,2));
+frutas.splice(1,1);
+```
+

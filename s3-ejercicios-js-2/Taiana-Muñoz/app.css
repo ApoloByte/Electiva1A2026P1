@@ -1,0 +1,24 @@
+.resaltado { background: rgb(168, 11, 168); }
+
+.activo { color: rgb(193, 176, 255); background: #830d9b; }
+
+.negrita { font-weight: bold; }
+
+.destacado { border: 1px solid rgb(203, 186, 218); }
+
+.tareas li { margin-bottom: 5px; }
+
+body {
+    background: linear-gradient(135deg,#ca87ae,#ff99cc);
+    font-family: 'Courier New', Courier, monospace;
+    color: #fc0054;
+    text-align: center;
+}
+
+button{
+    padding:18px;
+    border: none;
+    background: #ff1493;
+    color:azure;
+    cursor:pointer;
+}
