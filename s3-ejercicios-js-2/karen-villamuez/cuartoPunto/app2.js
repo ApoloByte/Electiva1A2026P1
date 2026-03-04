@@ -24,13 +24,13 @@ tareasImpares.forEach(function(li) {
     li.style.fontWeight = "bold";
 });
 //9
-function desmarcarCheckboxes() {
+
     const checkboxesMarcados = document.querySelectorAll('input[type="checkbox"]:checked');
     
     checkboxesMarcados.forEach(function(checkbox) {
         checkbox.checked = false;
     });
-}
+
 //10
 let contador = 0;
 

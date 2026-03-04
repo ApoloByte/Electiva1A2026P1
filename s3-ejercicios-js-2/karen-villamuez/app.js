@@ -28,7 +28,7 @@ for (let i = 0; i <parrafos1.length; i++) {
 }
 let parrafos2 = document.getElementsByTagName('p');
 for (let i = 0; i < parrafos2.length; i++) {
-	parrafos2[i].style.backgroundColor = '#b825a9b3';
+	parrafos2[i].style.backgroundColor = '#c19609ca';
     parrafos2[i].style.borderStyle= 'solid';
 	parrafos2[i].style.borderWeight = '5px';
     parrafos2[i].style.borderColor = '#53de13';
