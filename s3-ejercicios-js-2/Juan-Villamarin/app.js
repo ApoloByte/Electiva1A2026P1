@@ -15,7 +15,7 @@ console.log(elementos); // Muestra la colección de elementos en la consola
 let parrafos = document.getElementsByTagName('p');
 console.log(parrafos); // Muestra una colección de todos los elementos
 
-let parrafos1 = document.getElementsByTagName('p');
+
 for (let i = 0; i <parrafos.length; i++) {
 	parrafos[i].innerHTML = 'Hola mundo ' + (i + 1);
 }
@@ -24,4 +24,5 @@ for (let i = 0; i < parrafos.length; i++) {
 	parrafos[i].style.backgroundColor = 'yellow';
 	parrafos[i].style.fontWeight = 'bold';
 }
+
 
