@@ -1,0 +1,26 @@
+{
+  "name": "electiva1a2026p1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ApoloByte/Electiva1A2026P1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ApoloByte/Electiva1A2026P1/issues"
+  },
+  "homepage": "https://github.com/ApoloByte/Electiva1A2026P1#readme",
+  "dependencies": {
+    "better-sqlite3": "^12.6.2",
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
