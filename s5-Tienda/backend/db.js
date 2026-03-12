@@ -1,0 +1,37 @@
+const Database = require("better-sqlite3");
+
+const db = new Database("store.db");
+
+// Crear tablas
+db.exec(`
+CREATE TABLE IF NOT EXISTS products (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    price REAL NOT NULL,
+    image_url TEXT
+);
+
+CREATE TABLE IF NOT EXISTS cart_items (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    product_id INTEGER,
+    quantity INTEGER NOT NULL,
+    FOREIGN KEY(product_id) REFERENCES products(id)
+);
+`);
+
+// Insertar productos ejemplo
+const count = db.prepare("SELECT COUNT(*) as total FROM products").get();
+
+if (count.total === 0) {
+    const insert = db.prepare(
+        "INSERT INTO products (name, price) VALUES (?, ?)"
+    );
+
+    insert.run("Laptop", 3000);
+    insert.run("Mouse", 50);
+    insert.run("Teclado", 120);
+    insert.run("Monitor", 900);
+    insert.run("Audífonos", 200);
+}
+
+module.exports = db;

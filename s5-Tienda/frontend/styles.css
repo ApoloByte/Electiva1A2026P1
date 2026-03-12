@@ -1,0 +1,9 @@
+body {
+    font-family: Arial;
+}
+
+#products-container div {
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 10px;
+}
