@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mi API Frontend</title>
 </head>
 <body>
-    <pre>id <data-user></data-user> </pre>
-    <script>src </script>
+    <h1>Lista de Usuarios</h1>
+    <pre id="data-user">Cargando datos...</pre>
+
+    <script>
+        // Esta función coloca los datos en el HTML
+        function setDataUserElement(user) {
+            let dataUser = document.getElementById("data-user");
+            if (dataUser) {
+                // Formatea el JSON para que sea legible
+                dataUser.textContent = JSON.stringify(user, null, 2);
+            }
+        }
+
+        // Esta función hace la petición a tu API
+        async function fetchUser() {
+            try {
+                const respuesta = await fetch("http://localhost:3000/user");
+                const data = await respuesta.json();
+                
+                setDataUserElement(data);
+                console.log("Datos recibidos:", data);
+            } catch (error) {
+                console.error("Error al obtener data:", error);
+                document.getElementById("data-user").textContent = "Error al conectar con la API";
+            }
+        }
+
+        // Ejecuta la función al abrir la página
+        fetchUser();
+    </script>
 </body>
 </html>
