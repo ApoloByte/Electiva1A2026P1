@@ -17,6 +17,15 @@ const usr = {
 
 app.use(cors()); // Habilitar CORS para todas las rutas
 
+
+
+app.get('/hello/:name', (req, res) => {
+    const nombre = req.params.name; 
+    res.send(`¡Hola, ${nombre}!`);
+});
+
+
+
 app.get('/user', (req, res) => {
 	res.json(usr); // envía el objeto literal al cliente
 });
