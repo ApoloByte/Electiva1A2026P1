@@ -1,60 +1,69 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const sqlite3 = require('sqlite3').verbose(); // Movido arriba
+
 const app = express();
+
+// --- CONFIGURACIÓN DE BASE DE DATOS ---
+const db = new sqlite3.Database('./database.db'); 
+db.run("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age TEXT)");
+
+// --- MIDDLEWARES ---
 app.use(bodyParser.json());
+app.use(cors());
 
-
+// Objeto de prueba (puedes dejarlo o quitarlo si ya usas la DB)
 const usr = {
+    name: 'María',
+    age: '33',
+    email: 'maria.gmail.com'
+};
 
-	name: 'María',
-	
-	age: '33',
-	
-	email: 'maria.gmail.com'
-    };
+// --- RUTAS GET ---
 
-
-app.use(cors()); // Habilitar CORS para todas las rutas
-
-
-
+// Saludo personalizado
 app.get('/hello/:name', (req, res) => {
     const nombre = req.params.name; 
     res.send(`¡Hola, ${nombre}!`);
 });
 
-
-
+// Obtener usuario (puedes cambiarlo para que lea de la DB luego)
 app.get('/user', (req, res) => {
-	res.json(usr); // envía el objeto literal al cliente
+    res.json(usr);
 });
-// TODO: CREAR AQUÍ LOS DEMÁS MÉTODOS
-app.listen(3000, () => {
-	console.log('El servidor está escuchando en el puerto 3000');
-}); 
 
-
-// Método POST: Para recibir datos
+// --- RUTA POST (CON VALIDACIÓN Y SQLITE) ---
 app.post('/user', (req, res) => {
-    const nuevoUsuario = req.body; // Aquí llega lo que escribes en el Body de Postman
-    console.log(nuevoUsuario); 
-    res.json({ message: "Usuario recibido con éxito", data: nuevoUsuario });
+    const { name, age } = req.body;
+
+    // Validación de datos
+    if (!name || !age) {
+        return res.status(400).send("Faltan datos obligatorios: name y age");
+    }
+
+    const sql = "INSERT INTO users (name, age) VALUES (?, ?)";
+    db.run(sql, [name, age], function(err) {
+        if (err) return res.status(500).send(err.message);
+        res.json({ 
+            message: "Usuario guardado en base de datos",
+            id: this.lastID, 
+            name, 
+            age 
+        });
+    });
 });
 
-// Método PUT: Para simular actualización
+// --- RUTAS PUT Y DELETE (SIMULADAS) ---
 app.put('/user', (req, res) => {
     res.json({ message: "Usuario actualizado (simulado)" });
 });
 
-// Método DELETE: Para simular eliminación
 app.delete('/user', (req, res) => {
     res.json({ message: "Usuario eliminado (simulado)" });
 });
 
-
-
-
-
-
-//node ./app.js
+// --- INICIO DEL SERVIDOR ---
+app.listen(3000, () => {
+    console.log('El servidor está escuchando en el puerto 3000');
+});
