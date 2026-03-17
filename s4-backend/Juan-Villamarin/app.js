@@ -1,71 +1,69 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
-const sqlite3 = require('sqlite3').verbose(); // Importamos SQLite
+const sqlite3 = require('sqlite3').verbose(); // Movido arriba
 
 const app = express();
+
+// --- CONFIGURACIÓN DE BASE DE DATOS ---
+const db = new sqlite3.Database('./usuarios.db'); 
+db.run("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age TEXT)");
+
+// --- MIDDLEWARES ---
+app.use(bodyParser.json());
 app.use(cors());
-app.use(express.json());
 
-// --- CONFIGURACIÓN DE LA BASE DE DATOS ---
-// Se creará un archivo llamado 'database.db' en tu carpeta
-const db = new sqlite3.Database('./database.db', (err) => {
-    if (err) console.error("Error al abrir base de datos:", err.message);
-    else console.log("Conectado a la base de datos SQLite.");
-});
+// Objeto de prueba (puedes dejarlo o quitarlo si ya usas la DB)
+const usr = {
+    name: 'María',
+    age: '33',
+    email: 'maria.gmail.com'
+};
 
-// Crear la tabla de usuarios si no existe
-db.run(`CREATE TABLE IF NOT EXISTS usuarios (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
-    email TEXT NOT NULL,
-    age TEXT
-)`);
+// --- RUTAS GET ---
 
-// --- RUTAS DE LA API REST ---
-
-// 1. READ (GET) - Obtener todos de la DB
-app.get('/user', (req, res) => {
-    db.all("SELECT * FROM usuarios", [], (err, rows) => {
-        if (err) return res.status(500).json({ error: err.message });
-        res.json(rows);
-    });
-});
-
-// 2. CREATE (POST) - Insertar en la DB
-app.post('/user', (req, res) => {
-    const { name, email, age } = req.body;
-    if (!name || !email) return res.status(400).json({ mensaje: "Faltan datos" });
-
-    const sql = `INSERT INTO usuarios (name, email, age) VALUES (?, ?, ?)`;
-    db.run(sql, [name, email, age || "No especificada"], function(err) {
-        if (err) return res.status(500).json({ error: err.message });
-        res.status(201).json({ id: this.lastID, name, email });
-    });
-});
-
-// 3. UPDATE (PUT) - Modificar en la DB
-app.put('/user/:id', (req, res) => {
-    const { name, email, age } = req.body;
-    const sql = `UPDATE usuarios SET name = ?, email = ?, age = ? WHERE id = ?`;
-    
-    db.run(sql, [name, email, age, req.params.id], function(err) {
-        if (err) return res.status(500).json({ error: err.message });
-        if (this.changes === 0) return res.status(404).json({ mensaje: "No encontrado" });
-        res.json({ mensaje: "Usuario actualizado" });
-    });
-});
-
-// 4. DELETE (DELETE) - Eliminar de la DB
-app.delete('/user/:id', (req, res) => {
-    db.run(`DELETE FROM usuarios WHERE id = ?`, req.params.id, function(err) {
-        if (err) return res.status(500).json({ error: err.message });
-        res.json({ mensaje: "Eliminado", cambios: this.changes });
-    });
-});
-
-// Saludo dinámico (Punto 3)
+// Saludo personalizado
 app.get('/hello/:name', (req, res) => {
-    res.send(`¡Hola, ${req.params.name}!`);
+    const nombre = req.params.name; 
+    res.send(`¡Hola, ${nombre}!`);
 });
 
-app.listen(3000, () => console.log('Servidor con SQLite en puerto 3000'));
+// Obtener usuario (puedes cambiarlo para que lea de la DB luego)
+app.get('/user', (req, res) => {
+    res.json(usr);
+});
+
+// --- RUTA POST (CON VALIDACIÓN Y SQLITE) ---
+app.post('/user', (req, res) => {
+    const { name, age } = req.body;
+
+    // Validación de datos
+    if (!name || !age) {
+        return res.status(400).send("Faltan datos obligatorios: name y age");
+    }
+
+    const sql = "INSERT INTO users (name, age) VALUES (?, ?)";
+    db.run(sql, [name, age], function(err) {
+        if (err) return res.status(500).send(err.message);
+        res.json({ 
+            message: "Usuario guardado en base de datos",
+            id: this.lastID, 
+            name, 
+            age 
+        });
+    });
+});
+
+// --- RUTAS PUT Y DELETE (SIMULADAS) ---
+app.put('/user', (req, res) => {
+    res.json({ message: "Usuario actualizado (simulado)" });
+});
+
+app.delete('/user', (req, res) => {
+    res.json({ message: "Usuario eliminado (simulado)" });
+});
+
+// --- INICIO DEL SERVIDOR ---
+app.listen(3000, () => {
+    console.log('El servidor está escuchando en el puerto 3000');
+});
