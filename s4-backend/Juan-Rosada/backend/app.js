@@ -42,3 +42,28 @@ app.put('/user', (req, res) => {
 app.delete('/user', (req, res) => {
     res.json({ message: "Usuario eliminado (simulado)" });
 });
+
+
+
+//FUNCION ASINCRONA
+
+function setDataUserElement(user) {
+    let dataUser = document.getElementById("data-user");
+    if (dataUser) {
+        dataUser.textContent = JSON.stringify(user, null, 2);
+    }
+}
+
+async function fetchUser() {
+    try {
+        const respuesta = await fetch("http://localhost:3000/user");
+        const data = await respuesta.json();
+        setDataUserElement(data);
+        console.log("data", data);
+    } catch (error) {
+        console.error("Error al obtener data:", error);
+    }
+}
+fetchUser();
+
+//node ./app.js
