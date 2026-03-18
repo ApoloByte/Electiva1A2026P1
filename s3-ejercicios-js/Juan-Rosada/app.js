@@ -1,5 +1,5 @@
 let elemento = document.getElementById("mi-elemento");
-elemento.style.color = "Blue"; // Cambia el color del texto a rojo
+elemento.style.color = "yellow"; // Cambia el color del texto a rojo
 elemento.innerHTML = "Hola, gente!";
 console.log(elemento); // Muestra el elemento en la consola
 
@@ -20,6 +20,6 @@ for (let i = 0; i <parrafos.length; i++) {
 }
 
 for (let i = 0; i < parrafos.length; i++) {
-	parrafos[i].style.backgroundColor = 'yellow';
+	parrafos[i].style.backgroundColor = 'blue';
 	parrafos[i].style.fontWeight = 'bold';
 }

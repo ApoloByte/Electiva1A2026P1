@@ -1,6 +1,6 @@
-.resaltado { background: yellow; }
+.resaltado { background: rgb(128, 128, 48); }
 
-.activo { color: white; background: #0077cc; }
+.activo { color: rgb(166, 90, 90); background: #0077cc; }
 
 .negrita { font-weight: bold; }
 

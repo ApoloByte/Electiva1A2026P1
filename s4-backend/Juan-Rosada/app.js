@@ -22,7 +22,7 @@ const usr = {
 
 // --- RUTAS GET ---
 
-// Saludo personalizado
+// Saludo
 app.get('/hello/:name', (req, res) => {
     const nombre = req.params.name; 
     res.send(`¡Hola, ${nombre}!`);

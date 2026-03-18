@@ -1,10 +1,10 @@
 const Database = require('better-sqlite3');
 const path = require('path');
 
-// Esto solo conecta la base de datos
+
 const db = new Database(path.join(__dirname, 'database.db'));
 
-// Crear tablas
+
 db.exec(`
   CREATE TABLE IF NOT EXISTS products (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -25,11 +25,11 @@ db.exec(`
 const row = db.prepare('SELECT COUNT(*) as count FROM products').get();
 if (row.count === 0) {
     const insert = db.prepare('INSERT INTO products (name, price, image_url) VALUES (?, ?, ?)');
-    insert.run('Laptop Pro', 1200.00, 'https://via.placeholder.com/150');
-    insert.run('Mouse Óptico', 25.50, 'https://via.placeholder.com/150');
-    insert.run('Teclado Mecánico', 80.00, 'https://via.placeholder.com/150');
-    insert.run('Monitor 4K', 350.00, 'https://via.placeholder.com/150');
-    insert.run('Audífonos BT', 60.00, 'https://via.placeholder.com/150');
+    insert.run('Laptop Pro', 1200.00, '');
+    insert.run('Mouse Óptico', 25.50, '');
+    insert.run('Teclado Mecánico', 80.00, '');
+    insert.run('Monitor 4K', 350.00, '');
+    insert.run('Audífonos BT', 60.00, "");
     console.log("Productos iniciales creados.");
 }
 

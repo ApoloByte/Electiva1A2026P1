@@ -7,7 +7,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// --- RUTAS DE PRODUCTOS ---
+// PRODUCTOS
 app.get('/products', (req, res) => {
     const products = db.prepare('SELECT * FROM products').all();
     res.json(products);
@@ -18,7 +18,7 @@ app.get('/products/:id', (req, res) => {
     product ? res.json(product) : res.status(404).json({ error: "No encontrado" });
 });
 
-// --- RUTAS DEL CARRITO ---
+// CARRITO 
 app.get('/cart', (req, res) => {
     // JOIN para traer los datos del producto junto con el ítem del carrito
     const cart = db.prepare(`
@@ -35,7 +35,7 @@ app.get('/cart', (req, res) => {
 app.post('/cart', (req, res) => {
     const { productId, quantity } = req.body;
     
-    // Verificar si ya existe en el carrito
+    // Ver
     const existing = db.prepare('SELECT id, quantity FROM cart_items WHERE product_id = ?').get(productId);
     
     if (existing) {

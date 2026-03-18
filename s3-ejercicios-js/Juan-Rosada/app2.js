@@ -1,6 +1,6 @@
 var elementos = document.getElementsByClassName("destacado");
 for (var i = 0; i < elementos.length; i++) {
-	elementos[i].style.backgroundColor = "yellow"; // Cambia el color del texto a rojo
+	elementos[i].style.backgroundColor = "yellow"; // Cambia el color del texto 
 }
 
 const enlacesMenu = document.querySelectorAll("#menu a");
