@@ -13,5 +13,5 @@ Está construida con:
 
 Primero que todo necesitamos tener instalado:
 
-Node.js (v14 o superior)
-npm (incluido con Node)
+* Node.js (v14 o superior)
+* npm (incluido con Node)
