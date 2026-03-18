@@ -1,0 +1,43 @@
+body { font-family: Arial, sans-serif; margin: 20px; }
+.container { display: flex; gap: 50px; padding: 20px; }
+.products-section, .cart-section { flex: 1; }
+
+.card { 
+    border: 1px solid #ccc; 
+    padding: 15px; 
+    margin-bottom: 15px; 
+    border-radius: 8px; 
+    text-align: center;
+}
+
+.cart-item { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    background: #f9f9f9; 
+    margin-bottom: 10px; 
+    padding: 10px; 
+    border-radius: 4px;
+}
+
+.cart-summary {
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 2px solid #ccc;
+    text-align: right;
+}
+
+button { 
+    cursor: pointer; 
+    background: #28a745; 
+    color: white; 
+    border: none; 
+    padding: 8px 12px; 
+    border-radius: 4px; 
+}
+
+button:hover { background: #218838; }
+
+/* Novedad: Clase para los botones de eliminar/vaciar */
+.btn-danger { background: #dc3545; }
+.btn-danger:hover { background: #c82333; }

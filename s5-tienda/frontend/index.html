@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Tienda Virtual</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Tienda Electiva 1</h1>
+    
+    <div class="container">
+        <section class="products-section">
+            <h2>Productos Disponibles</h2>
+            <div id="products-container"></div>
+        </section>
+
+        <section class="cart-section">
+            <h2>Tu Carrito</h2>
+            <div id="cart-container"></div>
+            
+            <div class="cart-summary">
+                <p><strong>Total a Pagar: $<span id="cart-total">0</span></strong></p>
+                <button onclick="emptyCart()" class="btn-danger">Vaciar Carrito</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
