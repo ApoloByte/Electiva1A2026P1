@@ -1,0 +1,9 @@
+#products-container, #cart-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.product, .cart-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
