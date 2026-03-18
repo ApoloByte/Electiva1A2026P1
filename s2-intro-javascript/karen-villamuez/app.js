@@ -5,7 +5,7 @@ console.error("Este es un mensaje de error.");
 console.warn("Este es un mensaje de advertencia.")
 
 let nombreEstudiante = "lucas";
-
+3
 let edad = 5; 
 
 console.log("el nombre es ",nombreEstudiante,"la edad es ",edad);
