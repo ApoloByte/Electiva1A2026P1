@@ -1,11 +1,5 @@
 const apiBaseUrl = "http://localhost:3000";
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadProducts();
-    loadCart();
-});
-
-
 async function loadProducts() {
     try {
         const response = await fetch(`${apiBaseUrl}/products`);
@@ -60,7 +54,6 @@ async function loadCart() {
                 <div class="cart-item">
                     <span>${item.name} x ${item.quantity}</span> - 
                     <span>$${item.subtotal}</span>
-                    <!-- ESTA LÍNEA ES LA QUE TE FALTABA -->
                     <button onclick="removeFromCart(${item.id})">Eliminar</button>
                 </div>`;
         });

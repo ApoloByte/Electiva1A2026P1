@@ -35,35 +35,6 @@ app.get('/products/:id', (req, res) => {
     }
 });
 
-
-app.post('/products', (req, res) => {
-    try {
-        const { name, price, image_url } = req.body; 
-
-        if (!name || !price) {
-            return res.status(400).json({ error: "Faltan datos obligatorios (name, price)" });
-        }
-
-        const stmt = db.prepare(`
-            INSERT INTO products (name, price, image_url) 
-            VALUES (?, ?, ?)
-        `);
-
-        const info = stmt.run(name, price, image_url || null);
-
-        res.status(201).json({
-            id: info.lastInsertRowid, 
-            name,
-            price, 
-            image_url
-        });
-
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-});
-
-
 app.get('/cart_items', (req, res) => {
     try {
         const stmt = db.prepare(`
