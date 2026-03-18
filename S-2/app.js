@@ -1,5 +1,5 @@
 /**
- * EJERCICIO 1: TIPOS PRIMITIVOS
+ * EJERCICIO 1: TIPOS PRIMITIVOSS
  * Declaración de variables de cada tipo básico.
  */
 console.log("--- 1. EJERCICIO: TIPOS PRIMITIVOS ---");
