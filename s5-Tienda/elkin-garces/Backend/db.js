@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const db = new Database('tienda.db');
 
-// Crear tablas
+
 db.prepare(`
 CREATE TABLE IF NOT EXISTS products (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS cart_items (
 `).run();
 
 
-// Insertar productos (solo si no hay)
+
 const count = db.prepare("SELECT COUNT(*) as total FROM products").get();
 
 if (count.total === 0) {

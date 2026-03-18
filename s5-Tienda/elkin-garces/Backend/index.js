@@ -8,13 +8,13 @@ app.use(express.json());
 app.use(cors());
 
 
-// 🔹 GET productos
+
 app.get('/products', (req, res) => {
     const products = db.prepare("SELECT * FROM products").all();
     res.json(products);
 });
 
-// 🔹 GET producto por id
+
 app.get('/products/:id', (req, res) => {
     const product = db.prepare("SELECT * FROM products WHERE id = ?")
         .get(req.params.id);
@@ -23,7 +23,7 @@ app.get('/products/:id', (req, res) => {
 });
 
 
-// 🔹 GET carrito
+
 app.get('/cart', (req, res) => {
     const items = db.prepare(`
         SELECT cart_items.id, products.name, products.price, cart_items.quantity,
@@ -38,7 +38,7 @@ app.get('/cart', (req, res) => {
 });
 
 
-// 🔹 POST carrito
+
 app.post('/cart', (req, res) => {
     const { productId, quantity } = req.body;
 
@@ -57,7 +57,7 @@ app.post('/cart', (req, res) => {
 });
 
 
-// 🔹 DELETE item carrito
+
 app.delete('/cart/:id', (req, res) => {
     db.prepare("DELETE FROM cart_items WHERE id = ?")
         .run(req.params.id);
@@ -66,7 +66,7 @@ app.delete('/cart/:id', (req, res) => {
 });
 
 
-// 🔹 Vaciar carrito (opcional)
+
 app.delete('/cart', (req, res) => {
     db.prepare("DELETE FROM cart_items").run();
     res.json({ message: "Carrito vaciado" });
@@ -79,7 +79,7 @@ app.listen(3000, () => {
 
 app.post('/checkout', (req, res) => {
 
-    // Vaciar carrito
+
     db.prepare("DELETE FROM cart_items").run();
 
     res.json({ message: "Compra realizada con éxito" });

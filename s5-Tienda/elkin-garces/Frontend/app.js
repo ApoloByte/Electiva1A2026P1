@@ -1,7 +1,7 @@
 const apiBaseUrl = "http://localhost:3000";
 
 
-// 🔹 Cargar productos
+
 async function loadProducts() {
     const res = await fetch(`${apiBaseUrl}/products`);
     const products = await res.json();
@@ -25,7 +25,7 @@ async function loadProducts() {
 }
 
 
-// 🔹 Agregar al carrito
+
 async function addToCart(productId) {
     await fetch(`${apiBaseUrl}/cart`, {
         method: "POST",
@@ -42,7 +42,7 @@ async function addToCart(productId) {
 }
 
 
-// 🔹 Cargar carrito
+
 async function loadCart() {
     const res = await fetch(`${apiBaseUrl}/cart`);
     const data = await res.json();
@@ -73,7 +73,7 @@ async function loadCart() {
 }
 
 
-// 🔹 Eliminar del carrito
+
 async function removeFromCart(id) {
     await fetch(`${apiBaseUrl}/cart/${id}`, {
         method: "DELETE"
@@ -83,7 +83,7 @@ async function removeFromCart(id) {
 }
 
 
-// 🔹 Vaciar carrito
+
 async function clearCart() {
     await fetch(`${apiBaseUrl}/cart`, {
         method: "DELETE"
@@ -104,6 +104,6 @@ async function checkout() {
 }
 
 
-// 🔥 Inicialización
+
 loadProducts();
 loadCart();
