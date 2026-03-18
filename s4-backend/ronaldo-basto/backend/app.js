@@ -10,7 +10,7 @@ const usr = {
 	email: 'maria.gmail.com'
 };
 
-
+//hola
 
 
 app.use(cors()); // Habilitar CORS para todas las rutas
