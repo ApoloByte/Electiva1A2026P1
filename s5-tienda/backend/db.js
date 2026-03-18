@@ -1,5 +1,5 @@
 const Database = require("better-sqlite3");
-const db = new Database("store.db");
+const db = new Database("store.db");+
 
 // Crear tabla products
 db.prepare(`
