@@ -38,12 +38,12 @@ if (productCount.count === 0) {
   );
 
   const seedProducts = db.transaction(() => {
-    insertProduct.run('Teclado Mecánico RGB',       149900, 'https://placehold.co/300x200?text=Teclado');
-    insertProduct.run('Mouse Inalámbrico',           79900, 'https://placehold.co/300x200?text=Mouse');
-    insertProduct.run('Monitor 24" Full HD',        699900, 'https://placehold.co/300x200?text=Monitor');
-    insertProduct.run('Auriculares Bluetooth',      189900, 'https://placehold.co/300x200?text=Auriculares');
-    insertProduct.run('Webcam 1080p',               129900, 'https://placehold.co/300x200?text=Webcam');
-    insertProduct.run('Hub USB-C 7 puertos',         89900, 'https://placehold.co/300x200?text=Hub+USB');
+    insertProduct.run('Teclado Mecánico RGB',  149900, 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=300&h=200&fit=crop');
+    insertProduct.run('Mouse Inalámbrico',      79900, 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&h=200&fit=crop');
+    insertProduct.run('Monitor 24" Full HD',   699900, 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=300&h=200&fit=crop');
+    insertProduct.run('Auriculares Bluetooth', 189900, 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop');
+    insertProduct.run('Webcam 1080p',          129900, 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=300&h=200&fit=crop');
+    insertProduct.run('Hub USB-C 7 puertos',    89900, 'https://images.unsplash.com/photo-1625895197185-efcec01cffe0?w=300&h=200&fit=crop');
   });
 
   seedProducts();
