@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tienda virtual básica con carrito de compras" />
+  <title>Tienda Virtual</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>🛒 Tienda Virtual</h1>
+  </header>
+
+  <main>
+    <!-- Listado de productos -->
+    <section class="panel">
+      <h2>Productos disponibles</h2>
+      <section id="products-container">
+        <p class="loading-msg">Cargando productos…</p>
+      </section>
+    </section>
+
+    <!-- Carrito de compras -->
+    <section class="panel">
+      <h2>Carrito de compras</h2>
+      <section id="cart-container">
+        <p class="empty-msg">El carrito está vacío.</p>
+      </section>
+      <p id="cart-total"></p>
+      <button id="btn-clear-cart" class="btn-danger" style="display:none">
+        🗑 Vaciar carrito
+      </button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
