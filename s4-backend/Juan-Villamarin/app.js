@@ -13,7 +13,7 @@ db.run("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, 
 app.use(bodyParser.json());
 app.use(cors());
 
-// Objeto de prueba (puedes dejarlo o quitarlo si ya usas la DB)
+// Objeto de prueba 
 const usr = {
     name: 'María',
     age: '33',
