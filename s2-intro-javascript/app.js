@@ -1,31 +1,45 @@
-console.log("hola mundo")
+console.log("hello my friend")
+//PUNTO 2
+let edad=28;
+    console.log(edad);
+let nombre = "Cristian David";
+    console.log(nombre);
+let esEstudiante= true;
+    console.log(esEstudiante);
+let computer= null;
+    console.log(computer);
+let direccion= undefined;
+    console.log(direccion);
+let resultado = 0 / 0;
+  console.log(resultado);
 
-console.log("OPERACIONES");
-let resultado1 = (3 + 2) * (10 / 2); // Resultado: ?
-let resultado2 = 3 + 2 * 10 / 2; // Resultado: ?
-let resultado3 = (3 + 2) * 10 / 2; // Resultado: ?
-console.log( "Resultado 1: " + resultado1 + "\n" +"Resultado 2: " + resultado2 + "\n" +"Resultado 3: " + resultado3);
+  //PUNTO 5
+let resultado1 = (3 + 2) * (10 / 2);
+    console.log(resultado1);
+let resultado2 = 3 + 2 * 10 / 2; 
+    console.log(resultado2);
+let resultado3 = (3 + 2) * 10 / 2;
+    console.log(resultado3);
 
-console.log("INDICES DE LOS STRING");
-let texto = "El desarollo web es lo maximo";
-console.log(texto.charAt(0)); // Imprime "E"
-console.log(texto[4]); // Imprime "e"
+//PUNTO 6
+let texto ="El desarrollo web es lo máximo";
 
-// Metodos de busqueda
-console.log("METODOS DE BUSQUEDA");
-console.log(texto.indexOf("de")); // Imprime "3"
-console.log(texto.lastIndexOf("E")); // Imprime "0"
-console.log(texto.includes("web")) // Imprime "True"
 
-// Metodos de remplazo
-console.log("METODOS DE REMPLAZO");
-console.log(texto.replace("maximo","Genial")); // Cambia "Maximo" por "genial"pre
-console.log(texto.replaceAll("a","A")); // Cambia las "a" por "A"
+    //BUSQUEDA
+console.log(texto.indexOf("es")); // Imprime 4
 
-// Modificacion del Casing
-console.log("MEDIFICACION DEL CASING");
-console.log(texto.toUpperCase()); // Cambia todo el texto a MAYUSCULAS
-console.log(texto.toLocaleLowerCase()); // Cambia todo el texto a minusculas
+console.log(texto.lastIndexOf("a")); // Imprime 6
 
+console.log(texto.includes("lo")); // Imprime true
+
+    //REEMPLAZO
+console.log(texto.replace("máximo", "nuevo")); // Imprime "El desarrollo web es lo nuevo"
+
+console.log(texto.replaceAll("o", "O")); // Imprime " El desarrollo web es lo mAximo"
+
+    //NOTIFICACION
+console.log(texto.toUpperCase()); // Imprime "TODO EN MAYUSCULA"
+
+console.log(texto.toLowerCase()); // Imprime " todo en minuscula"
 
 
