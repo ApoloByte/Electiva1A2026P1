@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+#products-container,
+#cart-container {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+#products-container div,
+#cart-container div {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+button {
+  cursor: pointer;
+}
