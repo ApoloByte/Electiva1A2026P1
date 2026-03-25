@@ -25,11 +25,11 @@ db.exec(`
 const row = db.prepare('SELECT COUNT(*) as count FROM products').get();
 if (row.count === 0) {
     const insert = db.prepare('INSERT INTO products (name, price, image_url) VALUES (?, ?, ?)');
-    insert.run('Laptop Pro', 1200.00, '');
-    insert.run('Mouse Óptico', 25.50, '');
-    insert.run('Teclado Mecánico', 80.00, '');
-    insert.run('Monitor 4K', 350.00, '');
-    insert.run('Audífonos BT', 60.00, "");
+    insert.run('Macbook', 1000.00, '');
+    insert.run('Monitor Odyssey G4', 200.00, '');
+    insert.run('Teclado Kurama K552', 50.00, '');
+    insert.run('Disipador Perless assasin 120SE V2', 35.00, '');
+    insert.run('Logitech G203', 30.00, "");
     console.log("Productos iniciales creados.");
 }
 
