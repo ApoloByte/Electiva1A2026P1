@@ -1,9 +1,9 @@
-const Database = require('better-sqlite3');
-require('dotenv').config();
+const Database = require('better-sqlite3'); 
 
-const db = new Database(process.env.DB_NAME || 'tienda.db');
 
-// Tabla productos
+const db = new Database(process.env.DB_NAME || 'tienda.db'); // crea la conexion 
+
+// Tabla de productos
 db.prepare(`
 CREATE TABLE IF NOT EXISTS products (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -13,8 +13,8 @@ CREATE TABLE IF NOT EXISTS products (
 )
 `).run();
 
-// Tabla carrito
-db.prepare(`
+// Tabla de carrito
+db.prepare (`
 CREATE TABLE IF NOT EXISTS cart_items (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     product_id INTEGER,
@@ -26,7 +26,9 @@ CREATE TABLE IF NOT EXISTS cart_items (
 // Insertar productos de ejemplo (solo si no hay)
 const count = db.prepare('SELECT COUNT(*) as total FROM products').get();
 
-if (count.total === 0) {
+if (count.total === 0) //  evita los duplicados 
+
+{ 
     const insert = db.prepare('INSERT INTO products (name, price, image_url) VALUES (?, ?, ?)');
 
     insert.run('Camisa', 50000, '');

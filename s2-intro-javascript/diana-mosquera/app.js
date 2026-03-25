@@ -1,13 +1,13 @@
 //VARIABLES PRIMITIVAS
-console.log("Este es un mensaje de prueba.");
+console.log("Este es un mensaje de prueba."); // Imprime un mensaje en la consola del navegador
 
-console.error("Este es un mensaje de error.");
+console.error("Este es un mensaje de error."); // Imprime un mensaje de error en la consola
 
-console.warn("Este es un mensaje de advertencia.");
+console.warn("Este es un mensaje de advertencia."); // Imprime un mensaje de advertencia en la consola
 
-let nombreEstudiante= "Diana";
-let edadEstudiante= 23;
-console.log(nombreEstudiante, edadEstudiante);
+let nombreEstudiante= "Diana"; // Declaramos una variable llamada nombreEstudiante y le asignamos el valor "Diana"
+let edadEstudiante= 23; // Declaramos una variable llamada edadEstudiante y le asignamos el valor 23
+console.log(nombreEstudiante, edadEstudiante);  // Imprime el valor de las variables nombreEstudiante y edadEstudiante en la consola
 
 //ejercicio suma 
 let numero1=3;
@@ -27,12 +27,12 @@ console.log(resultado3);
 
 let texto="El desarrollo web es lo maximo";
 //busqueda
-console.log(texto.indexOf("e"));
-console.log(texto.lastIndexOf("l"));
-console.log(texto.includes("web"));
+console.log(texto.indexOf("e")); //devuelve la posicion de la primera ocurrencia
+console.log(texto.lastIndexOf("l")); //devuelve la posicion de la ultima ocurrencia
+console.log(texto.includes("web")); //devuelve true si el texto contiene la palabra "web", de lo contrario devuelve false
 //reemplazo 
-console.log(texto.replace("el","LA"));
-console.log(texto.replaceAll("l","r"));
+console.log(texto.replace("el","LA")); //reemplaza la primera ocurrencia de "el" por "LA"
+console.log(texto.replaceAll("l","r")); //reemplaza todas las ocurrencias de "l" por "r"
 //casing
-console.log(texto.toUpperCase());
-console.log(texto.toLowerCase());
+console.log(texto.toUpperCase()); //convierte el texto a mayusculas
+console.log(texto.toLowerCase()); //convierte el texto a minusculas

@@ -1,14 +1,14 @@
 const API = "http://localhost:3000";
 
 // Cargar productos
-async function loadProducts() {
-    const res = await fetch(`${API}/products`);
-    const products = await res.json();
+async function loadProducts() { 
+    const res = await fetch(`${API}/products`); // 
+    const products = await res.json(); 
 
     const container = document.getElementById("products");
     container.innerHTML = "";
 
-    products.forEach(p => {
+    products.forEach(p => { //
         container.innerHTML += `
             <div class="product">
                 <h3>${p.name}</h3>
@@ -20,13 +20,13 @@ async function loadProducts() {
 }
 
 // Agregar al carrito
-async function addToCart(id) {
-    await fetch(`${API}/cart`, {
+async function addToCart(id) { //
+    await fetch(`${API}/cart`, { //
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({
+        body: JSON.stringify({ 
             productId: id,
             quantity: 1
         })
@@ -37,10 +37,10 @@ async function addToCart(id) {
 
 // Cargar carrito
 async function loadCart() {
-    const res = await fetch(`${API}/cart`);
-    const data = await res.json();
+    const res = await fetch(`${API}/cart`); 
+    const data = await res.json(); 
 
-    const container = document.getElementById("cart");
+    const container = document.getElementById("cart"); 
     container.innerHTML = "";
 
     data.items.forEach(item => {

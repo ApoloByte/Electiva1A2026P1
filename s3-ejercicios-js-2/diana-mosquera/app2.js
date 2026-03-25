@@ -1,10 +1,10 @@
 // este sirveresaltar los elementos con la clase destacado
 
-document.getElementById("ejercicio1").addEventListener("click", function(){
+document.getElementById("ejercicio1").addEventListener("click", function(){  //
 
-    let destacados = document.querySelectorAll(".destacado");
+    let destacados = document.querySelectorAll(".destacado"); //
 
-    destacados.forEach(function(elemento){
+    destacados.forEach(function(elemento){ 
 
         elemento.style.backgroundColor = "yellow";
 
