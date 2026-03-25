@@ -1,31 +1,43 @@
-console.log("hola mundo")
+// 1. TIPOS PRIMITIVOS
+let texto = "Hola programadores primer pagina";   
+let numero = 25;                 
+let booleano = true;             
+let indefinido;                  
+let nulo = null;                 
+let simbolo = Symbol("id");      
 
-console.log("OPERACIONES");
-let resultado1 = (3 + 2) * (10 / 2); // Resultado: ?
-let resultado2 = 3 + 2 * 10 / 2; // Resultado: ?
-let resultado3 = (3 + 2) * 10 / 2; // Resultado: ?
-console.log( "Resultado 1: " + resultado1 + "\n" +"Resultado 2: " + resultado2 + "\n" +"Resultado 3: " + resultado3);
 
-console.log("INDICES DE LOS STRING");
-let texto = "El desarollo web es lo maximo";
-console.log(texto.charAt(0)); // Imprime "E"
-console.log(texto[4]); // Imprime "e"
+// 2. ORDEN DE OPERACIONES
+let resultado1 = (3 + 2) * (10 / 2);
+let resultado2 = 3 + 2 * 10 / 2;
+let resultado3 = (3 + 2) * 10 / 2;
 
-// Metodos de busqueda
-console.log("METODOS DE BUSQUEDA");
-console.log(texto.indexOf("de")); // Imprime "3"
-console.log(texto.lastIndexOf("E")); // Imprime "0"
-console.log(texto.includes("web")) // Imprime "True"
+console.log("=== ORDEN DE OPERACIONES ===");
+console.log(`Resultado 1: ${resultado1}`);
+console.log(`Resultado 2: ${resultado2}`);
+console.log(`Resultado 3: ${resultado3}`);
 
-// Metodos de remplazo
-console.log("METODOS DE REMPLAZO");
-console.log(texto.replace("maximo","Genial")); // Cambia "Maximo" por "genial"pre
-console.log(texto.replaceAll("a","A")); // Cambia las "a" por "A"
+// 3. MANIPULACION DE STRINGS
+let frase = "El desarrollo web es lo máximo";
+console.log("=== STRING METHODS ===");
 
-// Modificacion del Casing
-console.log("MEDIFICACION DEL CASING");
-console.log(texto.toUpperCase()); // Cambia todo el texto a MAYUSCULAS
-console.log(texto.toLocaleLowerCase()); // Cambia todo el texto a minusculas
+// Búsqueda
+console.log(`Incluye "web": ${frase.includes("web")}`);
+console.log(`Posición de "web": ${frase.indexOf("web")}`);
 
+// Reemplazo
+let reemplazo = frase.replace("lo máximo", "increíble");
+console.log(`Reemplazo: ${reemplazo}`);
+
+// Mayúsculas y minúsculas
+console.log(`Mayúsculas: ${frase.toUpperCase()}`);
+console.log(`Minúsculas: ${frase.toLowerCase()}`);
+
+// 4. TEMPLATE LITERALS
+let lenguaje = "JavaScript";
+let mensaje = `Estoy aprendiendo ${lenguaje} y es muy potente`;
+
+console.log("=== TEMPLATE LITERALS ===");
+console.log(mensaje);
 
 
