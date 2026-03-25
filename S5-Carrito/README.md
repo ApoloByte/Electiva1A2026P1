@@ -21,8 +21,12 @@ tienda-virtual/
 ## levantar el backend
 
 ```bash
+
 cd backend
-npm install
+npm init -y
+npm install express cors better-sqlite3 dotenv
+
+
 cp .env.example .env
 npm start
 # -> servidor corriendo en http://localhost:3000
