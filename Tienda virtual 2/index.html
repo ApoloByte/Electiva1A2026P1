@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechStore — Tienda Virtual</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <h1 class="logo">🛒 TechStore</h1>
+        <button id="toggle-cart-btn" class="btn-cart-toggle">
+          Ver carrito (<span id="cart-count">0</span>)
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- ── Catálogo de Productos ── -->
+      <section id="products-section">
+        <h2>Productos disponibles</h2>
+        <div id="products-container" class="products-grid">
+          <p class="loading-msg">Cargando productos...</p>
+        </div>
+      </section>
+
+      <!-- ── Carrito de Compras ── -->
+      <section id="cart-section" class="hidden">
+        <h2>Carrito de compras</h2>
+        <div id="cart-container">
+          <p class="empty-msg">El carrito está vacío.</p>
+        </div>
+        <div class="cart-footer">
+          <p id="cart-total" class="cart-total-text"></p>
+          <div class="cart-actions">
+            <button id="clear-cart-btn" class="btn btn-danger">Vaciar carrito</button>
+            <button id="checkout-btn" class="btn btn-success">Simular compra</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal de confirmación de compra -->
+    <div id="checkout-modal" class="modal hidden">
+      <div class="modal-content">
+        <h2>¡Compra simulada con éxito!</h2>
+        <p>Gracias por tu compra. En un sistema real aquí se procesaría el pago.</p>
+        <button id="close-modal-btn" class="btn btn-primary">Cerrar</button>
+      </div>
+    </div>
+
+    <script src="frontend/app.js"></script>
+  </body>
+</html>
