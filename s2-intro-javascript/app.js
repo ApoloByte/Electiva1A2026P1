@@ -1,31 +1,60 @@
-console.log("hola mundo")
+let resultado1 = (3 + 2) * (10 / 2);
+let resultado2 = 3 + 2 * 10 / 2;
+let resultado3 = (3 + 2) * 10 / 2;
 
-console.log("OPERACIONES");
-let resultado1 = (3 + 2) * (10 / 2); // Resultado: ?
-let resultado2 = 3 + 2 * 10 / 2; // Resultado: ?
-let resultado3 = (3 + 2) * 10 / 2; // Resultado: ?
-console.log( "Resultado 1: " + resultado1 + "\n" +"Resultado 2: " + resultado2 + "\n" +"Resultado 3: " + resultado3);
 
-console.log("INDICES DE LOS STRING");
-let texto = "El desarollo web es lo maximo";
-console.log(texto.charAt(0)); // Imprime "E"
-console.log(texto[4]); // Imprime "e"
+document.getElementById("resultado1").textContent = 
+    "Resultado 1: " + resultado1;
 
-// Metodos de busqueda
-console.log("METODOS DE BUSQUEDA");
-console.log(texto.indexOf("de")); // Imprime "3"
-console.log(texto.lastIndexOf("E")); // Imprime "0"
-console.log(texto.includes("web")) // Imprime "True"
+document.getElementById("resultado2").textContent = 
+    "Resultado 2: " + resultado2;
 
-// Metodos de remplazo
-console.log("METODOS DE REMPLAZO");
-console.log(texto.replace("maximo","Genial")); // Cambia "Maximo" por "genial"pre
-console.log(texto.replaceAll("a","A")); // Cambia las "a" por "A"
+document.getElementById("resultado3").textContent = 
+    "Resultado 3: " + resultado3;
 
-// Modificacion del Casing
-console.log("MEDIFICACION DEL CASING");
-console.log(texto.toUpperCase()); // Cambia todo el texto a MAYUSCULAS
-console.log(texto.toLocaleLowerCase()); // Cambia todo el texto a minusculas
+
+
+let frase1 = "El desarrollo web es lo máximo";
+let frase2 = "La integracion en la web es lo maximo";
+let frase3 = "Malditos negros";
+
+let resultadosString = `
+Incluye 'web': ${frase1.includes("web")} <br>
+Posición de 'web': ${frase1.indexOf("web")} <br>
+Ultima Posición de la 'web': ${frase1.lastIndexOf("i")} <br>
+
+Reemplazo: ${frase2.replace("máximo", "increíble")} <br>
+Remplazo completo: ${frase2.replaceAll("o", "O")} <br>
+
+Mayúsculas: ${frase3.toUpperCase()} <br>
+
+`;
+let frase = "El desarrollo web es lo maximo";
+
+console.log("Frase original:", frase);
+
+
+frase = frase.replace("maximo", "increible");
+console.log("Después de replace:", frase);
+
+
+frase = frase.replaceAll("o", "O");
+console.log("Después de replaceAll:", frase);
+
+
+frase = frase.toUpperCase();
+console.log("Después de toUpperCase:", frase);
+
+
+frase = frase.toLowerCase();
+console.log("Después de toLowerCase:", frase);
+
+
+
+
+
+document.getElementById("stringResultados").innerHTML = resultadosString;
+
 
 
 
