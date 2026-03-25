@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicios DOM</title>
+  <link rel="stylesheet" href="app.css">
+  <style>
+    body { font-family: Georgia, serif; padding: 20px; max-width: 700px; margin: auto; }
+    h2 { border-bottom: 2px solid #333; padding-bottom: 4px; }
+    .mi-clase { padding: 6px; margin: 4px 0; border: 1px solid #ccc; }
+    button { margin: 6px 4px; padding: 8px 14px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h1>Ejercicios DOM — Selección de elementos</h1>
+
+  <!-- ===================== EJERCICIO 1: por ID ===================== -->
+  <h2>Ejercicio 1 — Acceso por ID</h2>
+  <div id="mi-elemento">Hola Mundo</div>
+  <button onclick="ej1()">Ejecutar Ejercicio 1</button>
+
+  <!-- ===================== EJERCICIO 2: por clase ===================== -->
+  <h2>Ejercicio 2 — Acceso por clase</h2>
+  <div class="mi-clase">Cualquier frase1</div>
+  <div class="mi-clase">Cualquier frase2</div>
+  <div class="mi-clase">Cualquier frase3</div>
+  <button onclick="ej2()">Ejecutar Ejercicio 2</button>
+
+  <!-- ===================== EJERCICIO 3: por etiqueta ===================== -->
+  <h2>Ejercicio 3 — Acceso por etiqueta &lt;p&gt;</h2>
+  <p>ejemplo de parrafo 1</p>
+  <p>ejemplo de parrafo 2</p>
+  <p>ejemplo de parrafo 3</p>
+  <button onclick="ej3()">Ejecutar Ejercicio 3</button>
+
+  <hr>
+  <a href="./query.html">
+  <button>
+    ir a los ejercicios query
+  </button>
+  </a>
+
+  <script src="app.js"></script>
+</body>
+</html>
