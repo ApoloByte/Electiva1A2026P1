@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda Virtual</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Tienda Virtual</h1>
+  </header>
+
+  <main>
+
+    <!-- productos disponibles -->
+    <section class="seccion-productos">
+      <h2>Productos disponibles</h2>
+      <section id="products-container"></section>
+    </section>
+
+    <!-- carrito de compras-->
+    <section class="seccion-carrito">
+      <h2>Carrito de compras</h2>
+      <section id="cart-container"></section>
+      <p id="cart-total">Total: $0.00</p>
+      <div class="botones-carrito">
+        <button id="btn-vaciar">Vaciar carrito</button>
+        <button id="btn-comprar">Simular compra</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+/* fuente general courier new */
+* {
+  font-family: "Courier New", Courier, monospace;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* fondo lila  */
+body {
+  background-color: #f5eeff;
+  color: #3d1a5c;
+  min-height: 100vh;
+}
+
+/* encabezado con fondo lila medio */
+header {
+  background-color: #c084d4;
+  padding: 1.2rem 2rem;
+}
+
+header h1 {
+  color: #ffffff;
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+}
+
+/* layout principal en dos columnas */
+main {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: flex-start;
+}
+
+/* seccion de productos mas espacio */
+.seccion-productos {
+  flex: 2;
+}
+
+/* seccion del carrito menos espacio */
+.seccion-carrito {
+  flex: 1;
+  background-color: #ffffff;
+  border: 1px solid #e0b8f0;
+  border-radius: 10px;
+  padding: 1.2rem;
+  position: sticky;
+  top: 1rem;
+}
+
+h2 {
+  color: #9b4dca;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e8c8f5;
+  padding-bottom: 0.4rem;
+}
+
+/*  tarjetas de producto */
+#products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* tarjeta individual de producto */
+.product-card {
+  background-color: #efd8f1;
+  border: 1px solid #e0b8f0;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* imagen del producto */
+.product-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ff06a0;
+}
+
+/* nombre del producto */
+.product-card p.nombre {
+  font-weight: bold;
+  color: #6b2d8b;
+  font-size: 0.9rem;
+}
+
+/* precio del producto */
+.product-card p.precio {
+  color: #c06bbf;
+  font-size: 0.95rem;
+}
+
+/* boton agregar al carrito */
+.product-card button {
+  background-color: #d47fd4;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.45rem 0.8rem;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8rem;
+  margin-top: auto;
+}
+
+.product-card button:hover {
+  background-color: #b85ab8;
+}
+
+/* item individual del carrito */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0d0f8;
+  font-size: 0.85rem;
+}
+
+.cart-item span {
+  color: #5a1a6b;
+}
+
+/* boton eliminar item del carrito */
+.cart-item button {
+  background-color: #f5c0e8;
+  color: #7a1a5a;
+  border: 1px solid #e890d0;
+  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.75rem;
+}
+
+.cart-item button:hover {
+  background-color: #e890d0;
+  color: #ffffff;
+}
+
+/* mensaje de carrito vacio */
+.carrito-vacio {
+  color: #b090c0;
+  font-size: 0.85rem;
+  padding: 0.5rem 0;
+}
+
+/* total del carrito */
+#cart-total {
+  font-weight: bold;
+  color: #7a1a9a;
+  font-size: 1rem;
+  margin-top: 0.8rem;
+  padding-top: 0.6rem;
+  border-top: 2px solid #e8c8f5;
+}
+
+/* botones de accion del carrito */
+.botones-carrito {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.botones-carrito button {
+  flex: 1;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8rem;
+}
+
+/* boton vaciar */
+#btn-vaciar {
+  background-color: #f5c0e8;
+  color: #7a1a5a;
+}
+
+#btn-vaciar:hover {
+  background-color: #e890d0;
+  color: #ffffff;
+}
+
+/* boton comprar*/
+#btn-comprar {
+  background-color: #9b4dca;
+  color: #ffffff;
+}
+
+#btn-comprar:hover {
+  background-color: #7a2fa8;
+}
