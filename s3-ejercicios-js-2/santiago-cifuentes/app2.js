@@ -53,6 +53,7 @@ function agregarTarea() {
     // Crear nuevo elemento
     let item = document.createElement("li");
     item.textContent = "Tarea " + contador;
+    
 
     lista.appendChild(item);
 
