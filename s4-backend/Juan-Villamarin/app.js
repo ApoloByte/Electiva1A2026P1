@@ -28,7 +28,7 @@ app.get('/hello/:name', (req, res) => {
     res.send(`¡Hola, ${nombre}!`);
 });
 
-// Obtener usuario (puedes cambiarlo para que lea de la DB luego)
+// Obtener usuario 
 app.get('/user', (req, res) => {
     res.json(usr);
 });
