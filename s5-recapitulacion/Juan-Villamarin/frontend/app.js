@@ -8,7 +8,7 @@ async function loadProducts() {
 
     products.forEach(p => {
         container.innerHTML += `
-            <div class="card">
+            <div class="product">
                 <h3>${p.name}</h3>
                 <p>Precio: $${p.price}</p>
                 <button onclick="addToCart(${p.id})">Agregar al carrito</button>
@@ -34,7 +34,7 @@ async function loadCart() {
 
     data.items.forEach(item => {
         container.innerHTML += `
-            <div>
+            <div class="cart-item">
                 ${item.name} - Cantidad: ${item.quantity} - Subtotal: $${item.subtotal}
                 <button onclick="removeFromCart(${item.id})">Eliminar</button>
             </div>

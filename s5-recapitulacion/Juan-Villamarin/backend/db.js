@@ -25,11 +25,11 @@ db.exec(`
 const row = db.prepare('SELECT COUNT(*) as count FROM products').get();
 if (row.count === 0) {
     const insert = db.prepare('INSERT INTO products (name, price, image_url) VALUES (?, ?, ?)');
-    insert.run('Laptop Pro', 1200.00, '');
-    insert.run('Mouse Óptico', 25.50, '');
-    insert.run('Teclado Mecánico', 80.00, '');
-    insert.run('Monitor 4K', 350.00, '');
-    insert.run('Audífonos BT', 60.00, '');
+    insert.run('Acer Nitro5', 1700.00, '');
+    insert.run('Mouse G503', 40.50, '');
+    insert.run('Teclado Gamer', 80.00, '');
+    insert.run('Monitor 16K', 600.00, '');
+    insert.run('Audífonos SONY', 60.00, '');
     console.log("Productos iniciales creados.");
 }
 
