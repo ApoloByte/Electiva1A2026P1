@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .contenedor {
+    display: flex;
+    gap: 10px;
+  }
+
+  .caja {
+    background: lightblue;
+    padding: 20px;
+    text-align: center;
+    flex: 1; /* todos crecen igual */
+  }
+
+  .caja.grande {
+    flex-grow: 2; /* esta caja crece el doble */
+  }
+</style>
+</head>
+<body>
+  <div class="contenedor">
+    <div class="caja">Caja 1</div>
+    <div class="caja grande">Caja 2</div>
+    <div class="caja">Caja 3</div>
+  </div>
+</body>
+</html>
