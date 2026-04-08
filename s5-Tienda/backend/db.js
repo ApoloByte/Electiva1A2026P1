@@ -34,4 +34,4 @@ if (count.total === 0) {
     insert.run("Audífonos", 200);
 }
 
-module.exports = db;
+module.exports = db; // exporta base de datos

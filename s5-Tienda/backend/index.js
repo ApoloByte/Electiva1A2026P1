@@ -1,13 +1,14 @@
+//librerias 
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
 const db = require("./db");
 
-const app = express();
+const app = express(); // crea servidor
 
-app.use(cors());
-app.use(express.json());
+app.use(cors());// backend se conecte con from
+app.use(express.json());// use json 
 
 /* ---------------- PRODUCTS ---------------- */
 

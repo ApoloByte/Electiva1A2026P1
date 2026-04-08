@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo Flexbox y Grid</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+    }
+
+    header {
+      background: rgb(233, 8, 8);
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: rgb(217, 140, 140);
+    }
+
+    nav a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    /* CONTENIDO PRINCIPAL CON GRID */
+    .contenedor {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .caja {
+      background: steelblue;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* 📱 RESPONSIVE */
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contenedor {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>EJEMPLO</h1>
+  </header>
+
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Menu</a>
+    <a href="#">Contacto</a>
+  </nav>
+
+  <main class="contenedor">
+    <div class="caja">Contenido 1</div>
+    <div class="caja">Contenido 2</div>
+    <div class="caja">Contenido 3</div>
+  </main>
+
+</body>
+</html>
