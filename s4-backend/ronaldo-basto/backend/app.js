@@ -13,7 +13,11 @@ let usr = {
     email: 'maria@gmail.com'
 };
 
-// GET
+//hola
+
+
+app.use(cors()); // Habilitar CORS para todas las rutas
+
 app.get('/user', (req, res) => {
     res.json(usr);
 });
