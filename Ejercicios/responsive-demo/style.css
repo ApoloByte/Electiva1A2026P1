@@ -1,4 +1,4 @@
-/* VARIABLES (TEMA GOJO) */
+
 :root {
   --color-primario: #2a0a3d;
   --color-secundario: #3b0f5c;
@@ -11,7 +11,6 @@
   --radio: 12px;
 }
 
-/*RESET*/
 * {
   margin: 0;
   padding: 0;
