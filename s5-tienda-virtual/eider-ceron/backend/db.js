@@ -41,9 +41,9 @@ if (productCount.count === 0) {
     insertProduct.run('Teclado Mecánico RGB',  149900, 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=300&h=200&fit=crop');
     insertProduct.run('Mouse Inalámbrico',      79900, 'https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=300&h=200&fit=crop');
     insertProduct.run('Monitor 24" Full HD',   699900, 'https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=300&h=200&fit=crop');
-    insertProduct.run('Auriculares Bluetooth', 189900, 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=200&fit=crop');
-    insertProduct.run('Webcam 1080p',          129900, 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=300&h=200&fit=crop');
-    insertProduct.run('Hub USB-C 7 puertos',    89900, 'https://images.unsplash.com/photo-1625895197185-efcec01cffe0?w=300&h=200&fit=crop');
+    insertProduct.run('Auriculares Bluetooth', 189900, 'https://unsplash.com/es/fotos/un-par-de-auriculares-sentados-uno-al-lado-del-otro-JphZSKMy2qA');
+    insertProduct.run('Webcam 1080p',          129900, 'https://unsplash.com/es/fotos/microfono-negro-y-gris-en-microfono-negro-y-gris-VAoSKP_ocN0');
+    insertProduct.run('Hub USB-C 7 puertos',    89900, 'https://unsplash.com/es/fotos/concentrador-usb-negro-con-siete-puertos-y-conmutadores-XxvKhAUs2PA');
   });
 
   seedProducts();

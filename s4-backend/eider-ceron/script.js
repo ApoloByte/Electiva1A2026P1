@@ -79,7 +79,7 @@ app.delete('/user/:id', (req, res) => {
     res.json({ mensaje: "Usuario eliminado", id });
 });
 
-// GET - Saludo personalizado
+//Un saludito de prueba
 app.get('/hello/:nombre', (req, res) => {
     res.json({ mensaje: `¡Hola, ${req.params.nombre}!` });
 });
