@@ -1,6 +1,4 @@
-/* =========================
-   VARIABLES (TEMA GOJO)
-========================= */
+/* VARIABLES (TEMA GOJO) */
 :root {
   --color-primario: #2a0a3d;
   --color-secundario: #3b0f5c;
@@ -13,18 +11,14 @@
   --radio: 12px;
 }
 
-/* =========================
-   RESET
-========================= */
+/*RESET*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =========================
-   BODY
-========================= */
+/*  BODY */
 body {
   font-family: Arial, sans-serif;
   background: radial-gradient(circle, #0f0a1a, #05010a);
@@ -32,9 +26,7 @@ body {
   line-height: 1.6;
 }
 
-/* =========================
-   ENCABEZADO
-========================= */
+/*  ENCABEZADO */
 .encabezado {
   background: var(--color-primario);
   text-align: center;
@@ -51,9 +43,7 @@ body {
   opacity: 0.85;
 }
 
-/* =========================
-   NAV
-========================= */
+/* NAV */
 .barra-navegacion {
   background: var(--color-secundario);
 }
@@ -78,9 +68,7 @@ body {
   text-shadow: 0 0 10px var(--color-acento);
 }
 
-/* =========================
-   HERO (EFECTO GOJO)
-========================= */
+/* HERO  */
 .seccion-principal {
   background: radial-gradient(circle at center, #a855f7, #2a0a3d);
   text-align: center;
@@ -122,9 +110,7 @@ body {
   padding: var(--espaciado);
 }
 
-/* =========================
-   SERVICIOS (FLEXBOX)
-========================= */
+/*  SERVICIOS (FLEXBOX) */
 .modulo-servicios {
   display: flex;
   flex-direction: column;
@@ -145,9 +131,7 @@ body {
   box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
 }
 
-/* =========================
-   PANEL LATERAL
-========================= */
+/* PANEL LATERAL */
 .panel-lateral {
   background: #1a0f2e;
   padding: var(--espaciado);
@@ -161,9 +145,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* =========================
-   PORTAFOLIO (GRID)
-========================= */
+/* PORTAFOLIO (GRID)*/
 .modulo-portafolio {
   padding: 40px 20px;
   text-align: center;
@@ -189,9 +171,7 @@ body {
   box-shadow: 0 0 25px rgba(168, 85, 247, 0.7);
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 .pie-pagina {
   text-align: center;
   padding: 15px;
@@ -199,9 +179,7 @@ body {
   box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
 }
 
-/* =========================
-   TABLET
-========================= */
+/*TABLET*/
 @media (min-width: 768px) {
 
   .menu-navegacion {
@@ -222,9 +200,7 @@ body {
   }
 }
 
-/* =========================
-   DESKTOP
-========================= */
+/*DESKTOP */
 @media (min-width: 1024px) {
 
   .contenedor-principal {
