@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background: #0f0f23;
+    color: white;
+}
+
+/* HERO 100vh */
+.hero-vh {
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 5vmin;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 2.5vmin;
+    opacity: 0.9;
+}
+
+/* VMIN/VMAX */
+.demo-vmin, .demo-vw, .demo-orientation {
+    max-width: 1000px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.demo-vmin h2, .demo-vw h2, .demo-orientation h2 {
+    text-align: center;
+    font-size: 3vmin;
+    margin-bottom: 3rem;
+    color: #4facfe;
+}
+
+.cuadrados {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cuadrado {
+    width: 20vmin;
+    height: 20vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vmin;
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.vmin {
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+}
+
+.vmax {
+    background: linear-gradient(45deg, #48dbfb, #0abde3);
+}
+
+/* VW TEXT */
+.texto-vw {
+    font-size: 4vw;
+    text-align: center;
+    padding: 3rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+/* ORIENTATION */
+.grid-orientation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    height: 50vh;
+}
+
+.grid-orientation > div {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4vmin;
+    font-weight: bold;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* LANDSCAPE/PORTRAIT */
+@media (orientation: landscape) {
+    .grid-orientation {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .grid-orientation > div:first-child {
+        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    }
+}
+
+@media (orientation: portrait) {
+    .grid-orientation {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    
+    .grid-orientation > div:first-child {
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    }
+}
+
+/* STICKY FOOTER */
+.footer-vh {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.8);
+    padding: 2vmin;
+    text-align: center;
+    font-size: 2vmin;
+    backdrop-filter: blur(10px);
+}
+
+@media (max-width: 480px) {
+    .cuadrados {
+        flex-direction: column;
+        align-items: center;
+    }
+}
