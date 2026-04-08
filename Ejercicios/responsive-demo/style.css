@@ -1,0 +1,237 @@
+/* =========================
+   VARIABLES (TEMA GOJO)
+========================= */
+:root {
+  --color-primario: #2a0a3d;
+  --color-secundario: #3b0f5c;
+  --color-acento: #a855f7;
+  --color-acento-claro: #c084fc;
+  --color-fondo: #0f0a1a;
+  --color-blanco: #f5f3ff;
+
+  --espaciado: 16px;
+  --radio: 12px;
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle, #0f0a1a, #05010a);
+  color: var(--color-blanco);
+  line-height: 1.6;
+}
+
+/* =========================
+   ENCABEZADO
+========================= */
+.encabezado {
+  background: var(--color-primario);
+  text-align: center;
+  padding: 25px;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+.encabezado__titulo {
+  font-size: 26px;
+}
+
+.encabezado__descripcion {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+/* =========================
+   NAV
+========================= */
+.barra-navegacion {
+  background: var(--color-secundario);
+}
+
+.menu-navegacion {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-navegacion a {
+  color: var(--color-blanco);
+  text-decoration: none;
+  padding: 12px;
+  display: block;
+  transition: 0.3s;
+}
+
+.menu-navegacion a:hover {
+  color: var(--color-acento);
+  text-shadow: 0 0 10px var(--color-acento);
+}
+
+/* =========================
+   HERO (EFECTO GOJO)
+========================= */
+.seccion-principal {
+  background: radial-gradient(circle at center, #a855f7, #2a0a3d);
+  text-align: center;
+  padding: 70px 20px;
+  position: relative;
+}
+
+.seccion-principal__contenido {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* BOTÓN CON GLOW */
+.boton-accion {
+  margin-top: 15px;
+  padding: 12px 25px;
+  border: none;
+  background: var(--color-acento);
+  color: white;
+  border-radius: var(--radio);
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 15px var(--color-acento);
+  transition: 0.3s;
+}
+
+.boton-accion:hover {
+  box-shadow: 0 0 30px var(--color-acento-claro);
+  transform: scale(1.05);
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL (GRID)
+========================= */
+.contenedor-principal {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espaciado);
+  padding: var(--espaciado);
+}
+
+/* =========================
+   SERVICIOS (FLEXBOX)
+========================= */
+.modulo-servicios {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaciado);
+}
+
+.tarjeta-servicio {
+  background: #1a0f2e;
+  padding: 25px;
+  border-radius: var(--radio);
+  text-align: center;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+  transition: 0.3s;
+}
+
+.tarjeta-servicio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
+}
+
+/* =========================
+   PANEL LATERAL
+========================= */
+.panel-lateral {
+  background: #1a0f2e;
+  padding: var(--espaciado);
+  border-radius: var(--radio);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+}
+
+.panel-lateral img {
+  width: 100%;
+  border-radius: var(--radio);
+  margin-bottom: 10px;
+}
+
+/* =========================
+   PORTAFOLIO (GRID)
+========================= */
+.modulo-portafolio {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.grid-portafolio {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.item-portafolio {
+  background: #1a0f2e;
+  padding: 30px;
+  border-radius: var(--radio);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+  transition: 0.3s;
+}
+
+.item-portafolio:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.7);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.pie-pagina {
+  text-align: center;
+  padding: 15px;
+  background: var(--color-primario);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (min-width: 768px) {
+
+  .menu-navegacion {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .modulo-servicios {
+    flex-direction: row;
+  }
+
+  .contenedor-principal {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .grid-portafolio {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+@media (min-width: 1024px) {
+
+  .contenedor-principal {
+    grid-template-columns: 3fr 1fr;
+  }
+
+  .grid-portafolio {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
