@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes Responsive | Snaider Reyes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Imágenes & Media Responsive</h1>
+    </header>
+
+    <main class="main">
+        <!-- SRCSET -->
+        <section class="srcset-section">
+            <h2>srcset + sizes</h2>
+            <img class="responsive-img" 
+                 src="https://via.placeholder.com/400x300/ff6b6b/ffffff?text=400x300"
+                 srcset="https://via.placeholder.com/320x240/ff6b6b/ffffff?text=320x240 320w,
+                         https://via.placeholder.com/640x480/ff6b6b/ffffff?text=640x480 640w,
+                         https://via.placeholder.com/1024x768/ff6b6b/ffffff?text=1024x768 1024w"
+                 sizes="(max-width: 640px) 100vw, 50vw"
+                 alt="Imagen optimizada con srcset">
+        </section>
+
+        <!-- PICTURE -->
+        <section class="picture-section">
+            <h2>Elemento &lt;picture&gt;</h2>
+            <picture>
+                <source media="(max-width: 768px)" 
+                        srcset="https://via.placeholder.com/400x600/48dbfb/ffffff?text=Mobile">
+                <source media="(min-width: 769px)" 
+                        srcset="https://via.placeholder.com/800x400/0abde3/ffffff?text=Desktop">
+                <img src="https://via.placeholder.com/400x300/0abde3/ffffff?text=Fallback"
+                     alt="Imagen adaptativa por dispositivo">
+            </picture>
+        </section>
+
+        <!-- VIDEO RESPONSIVE -->
+        <section class="video-section">
+            <h2>Video Responsive</h2>
+            <video class="responsive-video" controls poster="https://via.placeholder.com/800x450/667eea/ffffff?text=Video+Poster">
+                <source src="video.mp4" type="video/mp4">
+                Tu navegador no soporta video.
+            </video>
+        </section>
+
+        <!-- OBJETO FIT -->
+        <section class="object-fit-section">
+            <h2>object-fit</h2>
+            <div class="imagenes-object-fit">
+                <img src="https://via.placeholder.com/400x300/54a0ff/ffffff?text=Cover" 
+                     alt="Cover" class="object-cover">
+                <img src="https://via.placeholder.com/400x300/2ec4b6/ffffff?text=Contain" 
+                     alt="Contain" class="object-contain">
+            </div>
+        </section>
+    </main>
+</body>
+</html>
