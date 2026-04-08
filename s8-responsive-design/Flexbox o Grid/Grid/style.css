@@ -1,0 +1,39 @@
+.dashboard {
+    display: grid;
+    /* Creamos 3 columnas de igual tamaño */
+    grid-template-columns: repeat(3, 1fr);
+    /* Definimos la altura de las filas */
+    grid-auto-rows: 150px; 
+    gap: 15px;
+    padding: 20px;
+}
+
+.item {
+    background-color: #34495e;
+    color: white;
+    display: flex; /* Usamos flex SOLO para centrar el texto dentro del item */
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+/* AQUÍ ESTÁ EL PODER DE GRID: */
+.destacado {
+    background-color: #e67e22;
+    /* Ocupa desde la columna 1 hasta la 3 (toda la fila superior) */
+    grid-column: 1 / 4; 
+    /* Ocupa dos filas de alto */
+    grid-row: 1 / 3;    
+}
+
+/* MEDIA QUERY: En móviles, que todo vuelva a ser una sola columna */
+@media (max-width: 600px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+    .destacado {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}

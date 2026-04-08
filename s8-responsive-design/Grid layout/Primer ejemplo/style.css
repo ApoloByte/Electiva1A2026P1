@@ -1,0 +1,29 @@
+.container {
+  display: grid;
+  /* Definimos 3 columnas: la lateral de 150px y el resto se reparte */
+  grid-template-columns: 150px 1fr 1fr;
+  /* Definimos las filas: el header y footer se ajustan al contenido, el medio crece */
+  grid-template-rows: auto 1fr auto;
+  gap: 10px; /* Espacio entre celdas */
+  height: 100vh;
+}
+
+.header {
+  grid-column: 1 / 4; /* Ocupa desde la línea 1 hasta la 4 (toda la fila) */
+  background-color: #f1c40f;
+}
+
+.sidebar {
+  grid-row: 2 / 3;
+  background-color: #3498db;
+}
+
+.content {
+  grid-column: 2 / 4;
+  background-color: #ecf0f1;
+}
+
+.footer {
+  grid-column: 1 / 4;
+  background-color: #2ecc71;
+}

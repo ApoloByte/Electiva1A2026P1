@@ -1,0 +1,31 @@
+.dashboard {
+  display: grid;
+  height: 90vh;
+  gap: 15px;
+  padding: 15px;
+  
+  /* Definimos 3 columnas y 3 filas */
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 60px 1fr 1fr;
+
+  /* "Dibujamos" el layout */
+  grid-template-areas: 
+    "header header"
+    "main   side-top"
+    "main   side-bottom";
+}
+
+.nav { grid-area: header; background: #2d3436; color: white; }
+.stats { grid-area: main; background: #0984e3; color: white; }
+.card-1 { grid-area: side-top; background: #00b894; color: white; }
+.card-2 { grid-area: side-bottom; background: #6c5ce7; color: white; }
+
+/* Un pequeño truco para centrar el texto de los bloques */
+.dashboard > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
