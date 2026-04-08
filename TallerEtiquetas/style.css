@@ -1,0 +1,65 @@
+/* 1. Estilos generales para que se vea limpio */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+}
+
+/* 2. Aplicando Grid al contenedor principal */
+.layout-principal {
+    display: grid;
+    min-height: 100vh;
+    gap: 10px;
+    /* Definimos las áreas */
+    grid-template-areas: 
+        "header header"
+        "sidebar content"
+        "footer footer";
+    /* La barra lateral mide 240px y el contenido ocupa el resto (1fr) */
+    grid-template-columns: 240px 1fr;
+    grid-template-rows: auto 1fr auto;
+}
+
+/* 3. Asignando cada clase a su área del Grid */
+.header-site {
+    grid-area: header;
+    background-color: #6e75c8;
+    color: white;
+    padding: 20px;
+}
+
+.nav-sidebar {
+    grid-area: sidebar;
+    background-color: #ffffff;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+}
+
+.main-content {
+    grid-area: content;
+    padding: 30px;
+}
+
+.footer-site {
+    grid-area: footer;
+    background-color: #263238;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* 4. Ejemplo de Grid dentro de otro Grid (Sub-grid) */
+.card-grid {
+    display: grid;
+    /* Galería responsiva automática */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
