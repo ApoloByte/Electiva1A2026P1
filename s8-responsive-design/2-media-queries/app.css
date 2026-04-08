@@ -1,0 +1,28 @@
+/* Estilos por defecto (Escritorio/Desktop) */
+.contenedor {
+  display: flex;
+  gap: 20px;
+  background-color: lightblue;
+  padding: 20px;
+}
+
+.caja {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #333;
+}
+
+/* --- MEDIA QUERY --- */
+/* Si la pantalla mide 768px o MENOS... */
+@media (max-width: 768px) {
+  .contenedor {
+    flex-direction: column; /* Apila las cajas verticalmente */
+    background-color: lightcoral; /* Cambia el color para notar el cambio */
+  }
+  
+  .caja {
+    font-size: 1.2rem; /* Aumenta un poco el texto para legibilidad en móvil */
+  }
+}
