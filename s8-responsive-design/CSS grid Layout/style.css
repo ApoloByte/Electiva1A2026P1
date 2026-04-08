@@ -1,0 +1,54 @@
+/* Estilos generales para que se vea bien */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+}
+
+/* Configuración del Grid en Móvil (1 sola columna) */
+body {
+    display: grid;
+    gap: 10px;
+    grid-template-areas: 
+        "header"
+        "content"
+        "sidebar"
+        "footer";
+}
+
+/* Colores para identificar las áreas */
+.header  { grid-area: header; background: #2c3e50; padding: 20px; }
+.content { grid-area: content; background: #2980b9; padding: 50px; }
+.sidebar { grid-area: sidebar; background: #27ae60; padding: 20px; }
+.footer  { grid-area: footer; background: #c0392b; padding: 20px; }
+
+/* Transformación para Escritorio (Media Query) */
+@media (min-width: 768px) {
+    body {
+        grid-template-columns: 1fr 300px; /* Contenido flexible y barra fija */
+        grid-template-areas: 
+            "header  header"
+            "content sidebar"
+            "footer  footer";
+    }
+}
+
+/* En móvil, ocultamos el menú por defecto */
+@media (max-width: 767px) {
+    #menu-principal {
+        display: none; /* Oculto */
+    }
+
+    /* Clase que añadiremos con JavaScript */
+    #menu-principal.activo {
+        display: block; /* Se muestra al hacer clic */
+        background-color: #333;
+    }
+}
+
+/* En escritorio, el botón desaparece y el menú siempre se ve */
+@media (min-width: 768px) {
+    .hamburguesa { display: none; }
+    #menu-principal { display: block; }
+}
