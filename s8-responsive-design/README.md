@@ -1,4 +1,5 @@
 # Diseño responsive
+[link a notion](/33c04bbd869d8065a8d4ff252f07abe9?pvs=25#33c04bbd869d8037ab9ec96c1e2720d4)
 
 El diseño responsive busca que la página web se adapte a distintos tamaños de pantalla sin perder usabilidad, evitando anchos fijos y aprovechando técnicas como media queries y layouts flexibles.
 
