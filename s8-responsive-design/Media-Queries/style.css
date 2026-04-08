@@ -1,0 +1,34 @@
+/* --- ESTILOS PARA ESCRITORIO*/
+.encabezado {
+    display: flex;
+    justify-content: space-between; /* Título a la izquierda, menú a la derecha */
+    align-items: center;
+    padding: 20px;
+    background: #f4f4f4;
+}
+
+.menu a {
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* --- MEDIA QUERY PARA MÓVILES*/
+@media (max-width: 600px) {
+    .encabezado {
+        flex-direction: column; /* Cambia el flujo a vertical */
+        text-align: center;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column; /* Los enlaces se apilan uno sobre otro */
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .menu a {
+        margin: 10px 0; /* Espacio vertical entre botones */
+        padding: 10px;
+        background: #ddd; /* Los hacemos parecer botones más fáciles de tocar */
+    }
+}

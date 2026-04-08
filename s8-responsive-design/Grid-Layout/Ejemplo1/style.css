@@ -1,0 +1,12 @@
+.contenedor-fr {
+  display: grid;
+  /* Crea 3 columnas: todas del mismo tamaño proporcional */
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 10px;
+}
+
+.contenedor-fr div {
+  background: #3498db;
+  padding: 20px;
+  color: white;
+}

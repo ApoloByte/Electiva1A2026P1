@@ -1,0 +1,16 @@
+.contenedor-flex {
+  display: flex;       /* Activa Flexbox */
+  flex-wrap: wrap;     /* Permite que las tarjetas bajen si no hay espacio */
+  gap: 15px;           /* Crea espacio entre las tarjetas */
+  background-color: #eee;
+  padding: 20px;
+}
+
+.tarjeta {
+  flex: 1 1 200px;     /* Crece, se encoge y tiene un tamaño base de 200px */
+  background: #3498db;
+  color: white;
+  padding: 40px;
+  text-align: center;
+  border-radius: 8px;
+}

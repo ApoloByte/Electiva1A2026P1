@@ -1,0 +1,16 @@
+.layout {
+  display: grid;
+  gap: 10px;
+  /* Definimos el "dibujo" de nuestra web */
+  grid-template-areas: 
+    "header header"
+    "sidebar contenido"
+    "footer footer";
+  grid-template-columns: 200px 1fr; /* Sidebar fija, contenido flexible */
+}
+
+/* Asignamos cada etiqueta a su área correspondiente */
+header { grid-area: header; background: #e74c3c; padding: 10px; }
+main   { grid-area: contenido; background: #ecf0f1; padding: 10px; }
+aside  { grid-area: sidebar; background: #f1c40f; padding: 10px; }
+footer { grid-area: footer; background: #2c3e50; color: white; padding: 10px; }

@@ -1,0 +1,18 @@
+/* Configuración para Móvil */
+.contenedor-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Una sola columna que ocupa todo el ancho */
+  gap: 10px;
+  padding: 10px;
+}
+
+/* Configuración para Escritorio*/
+@media (min-width: 600px) {
+  .contenedor-grid {
+    grid-template-columns: 3fr 1fr; /* El contenido es 3 veces más ancho que la barra */
+  }
+}
+
+/* Estilos visuales básicos */
+.contenido { background: #3498db; color: white; padding: 40px; }
+.sidebar { background: #2ecc71; color: white; padding: 40px; }
