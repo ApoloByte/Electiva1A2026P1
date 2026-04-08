@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Tienda Virtual</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Tienda Tech Alex</h1>
+    
+    <div class="main-container">
+        <section>
+            <h2>Productos Disponibles</h2>
+            <div id="products-container"></div>
+        </section>
+
+        <section class="cart-section">
+            <h2>Tu Carrito</h2>
+            <div id="cart-container"></div>
+            <p><strong>Total: $</strong><span id="cart-total">0</span></p>
+            <button onclick="clearCart()">Vaciar Carrito</button>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

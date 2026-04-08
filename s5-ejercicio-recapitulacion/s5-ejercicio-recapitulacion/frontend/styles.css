@@ -1,0 +1,8 @@
+body { font-family: sans-serif; padding: 20px; background-color: #f4f4f4; }
+.main-container { display: flex; gap: 40px; }
+#products-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+.product-card { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.cart-section { background: #fff; padding: 20px; border-left: 4px solid #007bff; min-width: 300px; }
+.cart-item { display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+button { cursor: pointer; background: #007bff; color: white; border: none; padding: 8px; border-radius: 4px; }
+button:hover { background: #0056b3; }
