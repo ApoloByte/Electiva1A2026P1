@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejemplo</title>
+
+<style>
+  header, nav, main { padding: 10px; }
+  header { background: #333; color: white; }
+  nav { background: #555; }
+  nav a { color: white; margin: 5px; }
+
+  .container {
+    display: block; 
+  }
+
+  .item {
+    background: #ddd;
+    margin: 5px 0;
+    padding: 10px;
+  }
+
+  /*  pantallas grandes */
+  @media screen and (width >= 80rem) {
+    .container {
+      display: flex;
+    }
+
+    .item {
+      flex: 1; 
+    }
+  }
+</style>
+
+</head>
+<body>
+
+<header>
+  <h1>Mi Página</h1>
+</header>
+
+<nav>
+  <a href="#">Inicio</a>
+  <a href="#">Contacto</a>
+</nav>
+
+<main class="container">
+  <section class="item">Contenido 1</section>
+  <section class="item">Contenido 2</section>
+</main>
+
+</body>
+</html>

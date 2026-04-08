@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "header header"
+    "menu content"
+    "footer footer";
+  gap: 10px;
+}
+.header { grid-area: header; background: #333; color: white; padding: 10px; }
+.menu { grid-area: menu; background: lightgray; padding: 10px; }
+.content { grid-area: content; background: lightblue; padding: 10px; }
+.footer { grid-area: footer; background: #222; color: white; padding: 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">Mi pagina</div>
+  <div class="menu">Menú</div>
+  <div class="content">Contenido</div>
+  <div class="footer">Footer</div>
+</div>
+</body>
+</html>
+
+
