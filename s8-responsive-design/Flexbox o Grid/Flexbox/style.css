@@ -1,0 +1,28 @@
+/* --- ESTILOS BASE (Móvil) --- */
+.container {
+    display: flex;
+    flex-direction: column; /* Apilados verticalmente */
+    gap: 20px;              /* Espacio entre tarjetas */
+    padding: 20px;
+}
+
+.card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #3498db;
+    text-align: center;
+}
+
+/* --- MEDIA QUERY (Escritorio - desde 768px) --- */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;    /* Se alinean horizontalmente */
+        justify-content: center; /* Se centran en la pantalla */
+    }
+
+    .card {
+        flex: 1;                /* Todas las tarjetas miden lo mismo */
+        max-width: 300px;       /* Evitamos que se estiren demasiado */
+    }
+}
