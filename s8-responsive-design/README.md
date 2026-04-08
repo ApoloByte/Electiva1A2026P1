@@ -23,7 +23,7 @@ A continuación se presenta una actividad de consulta que le permitirá aprender
 2. Código subido al github de la clase (en su respectiva rama); para ello, tenga en cuenta lo siguiente:
     - recuerde hacer un `git pull origin dev-victor-pinto` para tener el nombre que se estandarizó para la carpeta
     - revise que se encuentra en su rama utilizando git branch
-    - revise que el usuario e email configurado en su git corresponda con sus datos utilizando el comando `git config --global list` a continuación desplácese con las flechas arriba y abajo del teclado
+    - revise que el usuario e email configurado en su git corresponda con sus datos utilizando el comando `git config --global user.name` a continuación desplácese con las flechas arriba y abajo del teclado
         - Si no corresponde, utilice los siguientes comandos reemplazando lo que está en mayúsculas:
             
             ```bash
@@ -64,3 +64,13 @@ A continuación se presenta una actividad de consulta que le permitirá aprender
 - imágenes y media responsive; [clic aquí](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design#responsive_imagesmedia)
 - [Tipografía responsive](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design#responsive_typography)
 - Usando [viewport](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design#using_viewport_units_for_responsive_typography) para tipografía responsive
+
+
+``` bash
+alias setalias='nano ~/.bashrc && source ~/.bashrc'
+alias ssh-dir='cd ~/.ssh'
+alias git-ssh-config='cat ~/.ssh/config'
+alias git-id-ssh='cat ~/.ssh/id_victor_pinto.pub'
+alias git-config-user='git config --global user.name "Victor Pinto" && git config --global user.email victorpinto@gmail>
+```
+
