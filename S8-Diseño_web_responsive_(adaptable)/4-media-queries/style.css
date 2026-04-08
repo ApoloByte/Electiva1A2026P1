@@ -1,0 +1,12 @@
+nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+}

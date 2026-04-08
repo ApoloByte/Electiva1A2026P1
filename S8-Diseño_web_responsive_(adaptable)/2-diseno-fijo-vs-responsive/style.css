@@ -1,0 +1,13 @@
+.fijo {
+  width: 1200px;
+  background: red;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.responsive {
+  width: 100%;
+  max-width: 1200px;
+  background: green;
+  color: white;
+}

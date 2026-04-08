@@ -1,0 +1,13 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+h1 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}

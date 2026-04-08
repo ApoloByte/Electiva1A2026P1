@@ -1,0 +1,25 @@
+.layout {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 200px 1fr;
+}
+
+header { grid-area: header; background: rgb(230, 173, 227); } /* cordenada */
+aside { grid-area: sidebar; background: rgb(151, 218, 17); }
+main { grid-area: main; background: lightyellow; } /* color */
+footer { grid-area: footer; background: lightcoral; }
+
+/* responsive */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+}

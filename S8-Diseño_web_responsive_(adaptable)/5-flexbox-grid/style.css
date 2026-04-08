@@ -1,0 +1,11 @@
+.tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tarjeta {
+  flex: 1 1 280px;
+  background: lightblue;
+  padding: 20px;
+}

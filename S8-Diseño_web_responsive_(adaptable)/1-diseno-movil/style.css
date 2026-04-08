@@ -1,0 +1,23 @@
+/* movil */
+.contenedor {
+  padding: 10px;
+  background: lightblue;
+}
+
+/* tablet */
+@media (min-width: 768px) {
+  .contenedor {
+    padding: 20px;
+    background: lightgreen;
+  }
+}
+
+/* escritorio */
+@media (min-width: 1024px) {
+  .contenedor {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+    background: lightcoral;
+  }
+}
