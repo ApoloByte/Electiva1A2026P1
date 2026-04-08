@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viewport Units | Snaider Reyes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Hero 100vh -->
+    <section class="hero-vh">
+        <div class="hero-content">
+            <h1>Viewport Height</h1>
+            <p>100vh = altura completa de viewport</p>
+        </div>
+    </section>
+
+    <!-- Contenedor vmin/vmax -->
+    <section class="demo-vmin">
+        <h2>vmin / vmax</h2>
+        <div class="cuadrados">
+            <div class="cuadrado vmin">4vmin</div>
+            <div class="cuadrado vmax">4vmax</div>
+        </div>
+    </section>
+
+    <!-- Texto vw -->
+    <section class="demo-vw">
+        <h2>Viewport Width</h2>
+        <p class="texto-vw">Este texto usa 4vw. Se adapta al ancho de pantalla.</p>
+    </section>
+
+    <!-- Landscape/Portrait -->
+    <section class="demo-orientation">
+        <h2>Orientación</h2>
+        <div class="grid-orientation">
+            <div>Landscape</div>
+            <div>Portrait</div>
+        </div>
+    </section>
+
+    <!-- Sticky footer -->
+    <footer class="footer-vh">
+        <p>Footer siempre visible (100vh - contenido)</p>
+    </footer>
+</body>
+</html>
