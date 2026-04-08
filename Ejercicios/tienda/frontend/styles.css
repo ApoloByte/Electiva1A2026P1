@@ -1,0 +1,179 @@
+
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --bg: #0f172a;
+    --surface: #111827;
+    --card: #1f2937;
+    --border: #374151;
+    --text: #e5e7eb;
+    --text-muted: #9ca3af;
+    --danger: #ef4444;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/*  LAYOUT */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.main {
+    padding: 40px 0;
+}
+
+.section {
+    margin-bottom: 40px;
+}
+
+.section-header {
+    margin-bottom: 15px;
+}
+
+/* HEADER */
+.header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.badge {
+    background: var(--primary);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+/*  GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+/*   CARD */
+.grid div {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 15px;
+    transition: 0.2s ease;
+}
+
+.grid div:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary);
+}
+
+/* TEXTOS */
+p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+/* BOTONES */
+button {
+    border: none;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* AGREGAR */
+#products-container button {
+    background: var(--primary);
+    color: white;
+}
+
+#products-container button:hover {
+    background: var(--primary-hover);
+}
+
+/* ELIMINAR */
+#cart-container button {
+    background: var(--danger);
+    color: white;
+}
+
+#cart-container button:hover {
+    opacity: 0.85;
+}
+
+/* BOTON SECUNDARIO */
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary);
+}
+
+/* CARRITO */
+.cart-summary {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cart-total {
+    font-weight: 600;
+}
+
+/*  FOOTER */
+.footer {
+    border-top: 1px solid var(--border);
+    padding: 30px 0;
+    background: var(--surface);
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+}
