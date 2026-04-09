@@ -1,0 +1,52 @@
+/* Estilos base */
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+header {
+  background: rgb(233, 8, 8);
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* Navegación con FLEXBOX */
+nav {
+  display: flex;
+  justify-content: center;
+  background: rgb(217, 140, 140);
+}
+
+nav a {
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+}
+
+/* Contenido principal con GRID */
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas en escritorio */
+  gap: 10px;
+  padding: 20px;
+}
+
+.caja {
+  background: steelblue;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contenedor {
+    grid-template-columns: 1fr; /* Cambia a una sola columna en móvil */
+  }
+}
