@@ -1,0 +1,11 @@
+.items {
+    display: flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.item {
+    flex: 1 1 200px; 
+    background: red;
+    padding: 25px;
+}

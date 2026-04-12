@@ -1,0 +1,21 @@
+/* Estilo del cuerpo */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center; 
+}
+
+.bloque {
+    max-width: 500px; 
+    width: 100%;      
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+img {
+    width: 100%;      
+    height: auto;     
+    display: block;   
+}
