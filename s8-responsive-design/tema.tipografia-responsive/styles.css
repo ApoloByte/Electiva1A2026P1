@@ -1,9 +1,7 @@
-/* Tamaño base de la tipografía */
 html {
     font-size: 16px;
 }
 
-/* Ajuste en pantallas pequeñas */
 @media (max-width: 600px) {
     html {
         font-size: 14px;
