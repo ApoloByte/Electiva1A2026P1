@@ -1,0 +1,18 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+img, video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    margin-top: 12px;
+}
+
+.bloque {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 15px;
+}
