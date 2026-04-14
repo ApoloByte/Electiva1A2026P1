@@ -1,0 +1,27 @@
+/* Estilos para MÓVIL (por defecto) */
+.menu {
+  display: flex;
+  flex-direction: column; /* Menú en lista vertical */
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.navbar {
+  text-align: center; /* Centramos todo para el celular */
+}
+
+/* Estilos para ESCRITORIO (Pantallas mayores a 768px) */
+@media (min-width: 768px) {
+  .menu {
+    flex-direction: row; /* El menú se vuelve horizontal */
+    justify-content: flex-end; /* Se manda a la derecha */
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between; /* Título a la izquierda, menú a la derecha */
+    align-items: center;
+    padding: 10px 50px;
+  }
+}
