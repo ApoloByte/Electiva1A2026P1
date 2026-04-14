@@ -33,8 +33,8 @@ async function loadProducts() {
 //Función para agregar un producto al carrito
 async function addToCart(productId) {
     try {
-        await fetch(`${apiBaseUrl}/cart`, {
-            method: 'POST',     //envía el producto al backend
+        await fetch(`${apiBaseUrl}/cart`, { //Hace una peticion al backend del post del carrito
+            method: 'POST',     
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ productId: productId, quantity: 1 })
         });

@@ -66,7 +66,7 @@ app.get('/cart', (req, res) => {
         `);
         const cart = statement.all();
 
-        // Calculamos el gran total sumando todos los subtotales
+        // Calculamos el total sumando todos los subtotales
         const total = cart.reduce((acc, item) => acc + item.subtotal, 0);
 
         res.json({ items: cart, total: total });
