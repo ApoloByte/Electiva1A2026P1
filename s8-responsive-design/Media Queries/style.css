@@ -1,0 +1,81 @@
+/* --- ESTILOS BASE (MÓVIL PRIMERO) --- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* El menú en móvil es vertical */
+.menu-responsive {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    background-color: #333;
+    padding: 15px;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.enlaces {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.enlaces li {
+    padding: 10px 0;
+    border-bottom: 1px solid #444;
+}
+
+.enlaces a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Control de los avisos en pantalla */
+.texto-pc { display: none; }
+.texto-movil { color: #e74c3c; font-weight: bold; }
+
+.indicador {
+    text-align: center;
+    padding: 50px;
+}
+
+/* --- MEDIA QUERY PARA ESCRITORIO (A partir de 768px) --- */
+@media (min-width: 768px) {
+    
+    .menu-responsive {
+        flex-direction: row; /* Cambia a horizontal */
+        justify-content: space-between;
+        padding: 10px 50px;
+        background-color: #2c3e50; /* Cambia a un azul oscuro */
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+
+    .enlaces {
+        width: auto;
+        display: flex;
+        gap: 20px;
+    }
+
+    .enlaces li {
+        border-bottom: none;
+    }
+
+    /* Cambiamos los avisos */
+    .texto-movil { display: none; }
+    .texto-pc { display: inline; color: #27ae60; font-weight: bold; }
+    
+    body {
+        background-color: #e8f4f8;
+    }
+}

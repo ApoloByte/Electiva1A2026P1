@@ -1,0 +1,28 @@
+/* El contenedor que hace la magia */
+.padre-flex {
+    display: flex;           /* ¡Esto activa todo! */
+    justify-content: space-between; /* Esto mueve las cajas al centro horizontal */
+    align-items: center;     /* Esto las centra verticalmente */
+    
+    background-color: #eee;
+    height: 400px;           /* Altura grande para que se note */
+    border: 5px solid black;
+}
+
+/* Estilo de las cajitas */
+.tarjeta {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    display: flex;           /* Para centrar el número dentro de la caja */
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+/* Colores para distinguir las cajas */
+.roja { background-color: red; }
+.azul { background-color: blue; }
+.verde { background-color: green; }
