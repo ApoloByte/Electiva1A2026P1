@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.item {
+    background: #3b82f6;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    border-radius: 10px;
+}

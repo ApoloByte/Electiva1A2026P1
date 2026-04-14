@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Imagen Responsive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Imagen responsive</h1>
+
+<img 
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFv1_FbdeBqC4XNw867UrwjFvapnbpPtyCtw&s"
+    alt="Paisaje"
+    class="img-responsive">
+
+<img 
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFv1_FbdeBqC4XNw867UrwjFvapnbpPtyCtw&s"
+    srcset="
+        https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFv1_FbdeBqC4XNw867UrwjFvapnbpPtyCtw&s 480w,
+        https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFv1_FbdeBqC4XNw867UrwjFvapnbpPtyCtw&s 800w,
+        https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFv1_FbdeBqC4XNw867UrwjFvapnbpPtyCtw&s 1200w"
+    sizes="(max-width: 600px) 100vw, 50vw"
+    alt="Imagen adaptable">
+
+<picture>
+    <source media="(max-width: 600px)" 
+        srcset="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFv1_FbdeBqC4XNw867UrwjFvapnbpPtyCtw&s">
+    
+    <source media="(max-width: 1024px)" 
+        srcset="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFv1_FbdeBqC4XNw867UrwjFvapnbpPtyCtw&s">
+    
+    <img 
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFv1_FbdeBqC4XNw867UrwjFvapnbpPtyCtw&s"
+        alt="Imagen adaptable"
+        class="img-responsive">
+</picture>
+
+</body>
+</html>
