@@ -1,0 +1,54 @@
+/* --- CONFIGURACIÓN BASE --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* --- EJEMPLO 1: GRID AREAS (Layout) --- */
+.grid-layout {
+    display: grid;
+    gap: 10px;
+    /* Definición para MÓVIL (1 columna) */
+    grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
+}
+
+/* Aplicación de áreas a las etiquetas */
+header { grid-area: header; background-color: #ffadad; padding: 20px; text-align: center; }
+nav    { grid-area: nav;    background-color: #ffd6a5; padding: 15px; }
+main   { grid-area: main;   background-color: #fdffb6; padding: 20px; min-height: 300px; }
+aside  { grid-area: aside;  background-color: #caffbf; padding: 15px; }
+footer { grid-area: footer; background-color: #9bf6ff; padding: 20px; text-align: center; }
+
+/* MEDIA QUERY PARA ESCRITORIO (Transformación de la estructura) */
+@media (min-width: 1024px) {
+    .grid-layout {
+        /* Definimos 3 columnas: 200px las laterales y lo que sobre para el centro */
+        grid-template-columns: 200px 1fr 200px;
+        grid-template-areas: 
+            "header  header  header"
+            "nav     main    aside"
+            "footer  footer  footer";
+    }
+}
+
+/* --- EJEMPLO 2: GRID Dinamico (Galería) --- */
+.galeria-grid {
+    display: grid;
+    /* Crea columnas de mínimo 150px que se ajustan solas */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.tarjeta {
+    background-color: white;
+    border: 2px solid #333;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
