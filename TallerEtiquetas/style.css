@@ -1,3 +1,22 @@
+/* Título que crece gradualmente con la pantalla en caso de que sea para pc o para movil  */
+h1 {
+  font-size: calc(1.5rem + 2vw);
+  line-height: 1.2;
+}
+
+/* Texto de párrafo con un ajuste más sutil */
+p {
+  font-size: calc(1rem + 0.5vw);
+}
+/* para que las imágenes nunca se salgan de su contenedor */
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Elimina espacios extraños debajo de la imagen */
+  margin: 0 auto; /* centra la imagen */
+}
+
+
 /* 1. Estilos generales para que se vea limpio */
 body {
     margin: 0;
@@ -63,3 +82,4 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     text-align: center;
 }
+/*desarrollo punto 3 imagenes*/
