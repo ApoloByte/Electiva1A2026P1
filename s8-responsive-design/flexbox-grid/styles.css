@@ -1,0 +1,34 @@
+/* 1. ESTILO PARA MÓVIL*/
+.contenedor-principal {
+    display: flex;
+    flex-direction: column; /* Apila uno sobre otro */
+    width: 100%;            /* Que no mida más del 100% */
+    overflow-x: hidden;     /* Evita que se cree scroll horizontal */
+}
+
+.articulos, .anuncios {
+    width: 100%;            /* En móvil, cada uno ocupa todo el ancho */
+    box-sizing: border-box; /* Asegura que el padding no "infle" el cuadro */
+}
+
+/* 2. ESTILO PARA ESCRITORIO*/
+@media (min-width: 768px) {
+    .contenedor-principal {
+        flex-direction: row; /* Aquí sí se ponen uno al lado del otro */
+    }
+    
+    .articulos { flex: 3; }
+    .anuncios  { flex: 1; }
+}
+
+.articulos {
+    background-color: #e3f2fd; /* Azul claro */
+    border: 2px solid #2196f3;
+    padding: 20px;
+}
+
+.anuncios {
+    background-color: #f1f8e9; /* Verde claro */
+    border: 2px solid #8bc34a;
+    padding: 20px;
+}
