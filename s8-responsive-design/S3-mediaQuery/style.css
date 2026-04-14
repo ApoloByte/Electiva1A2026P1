@@ -1,0 +1,64 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: sans-serif; }
+
+/* ── BASE (móvil primero — mobile first) ── */
+header {
+  background: #6c63ff;
+  color: white;
+  padding: 1rem;
+}
+
+nav {
+  background: #1d9e75;
+  padding: 0.5rem 1rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;   /* apilado en móvil */
+  gap: 0.5rem;
+}
+
+nav a { color: white; text-decoration: none; }
+
+main {
+  display: flex;
+  flex-direction: column;   /* una columna en móvil */
+  padding: 1rem;
+  gap: 1rem;
+}
+
+aside { display: none; }    /* oculto en móvil */
+
+footer {
+  background: #d3d1c7;
+  text-align: center;
+  padding: 0.75rem;
+  font-size: 0.85rem;
+}
+
+/* ── TABLET: 480px en adelante ── */
+@media (min-width: 480px) {
+  nav ul { flex-direction: row; gap: 1.5rem; }
+
+  main { flex-direction: row; }
+
+  article { flex: 2; }
+
+  aside {
+    display: block;         /* aparece la barra lateral */
+    flex: 1;
+    background: #faeeda;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+}
+/* ── DESKTOP: 768px en adelante ── */
+@media (min-width: 768px) {
+  body { max-width: 1100px; margin: 0 auto; }
+
+  header { padding: 1.5rem 2rem; font-size: 1.1rem; }
+
+  article { flex: 3; }    /* más espacio para el contenido */
+}

@@ -1,0 +1,17 @@
+/* Diseño fijo*/
+.contenedor-fijo {
+  width: 800px;          /* siempre 800px, desborda en móvil */
+  background: #fdd;
+  padding: 1rem;
+  border: 2px solid red;
+}
+
+/* diseño responsive */
+.contenedor-responsive {
+  width: 90%;            /* relativo al viewport */
+  max-width: 800px;      /* nunca más de 800px en pantallas grandes */
+  margin: 0 auto;        /* centrado */
+  background: #dfd;
+  padding: 1rem;
+  border: 2px solid green;
+}
