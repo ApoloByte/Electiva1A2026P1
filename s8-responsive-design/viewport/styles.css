@@ -3,7 +3,7 @@ h1 {
     font-size: 5vw; 
 }
 
-/* Opcional: usando clamp para que no se vea muy pequeña en móvil ni gigante en PC */
+/* Se puede usar clamp para que no se vea muy pequeña en móvil ni gigante en PC */
 h2 {
     font-size: clamp(1.5rem, 4vw, 3rem);
 }
