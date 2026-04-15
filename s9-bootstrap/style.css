@@ -31,5 +31,6 @@
     top: 10px;
     right: 10px;
     left: 10px;
+    z-index: -10;
     background-color: rgb(138, 43, 226, 0.5);
 }
