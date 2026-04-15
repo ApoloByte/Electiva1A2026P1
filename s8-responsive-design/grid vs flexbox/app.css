@@ -1,0 +1,20 @@
+
+.item {
+    padding: 20px;
+    border: 2px solid #333;
+    text-align: center;
+}
+
+/* Configuración Flex */
+.contenedor-flex {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Configuración Grid */
+.contenedor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}

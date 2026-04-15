@@ -1,0 +1,21 @@
+/* === Tipografía responsive con viewport === */
+
+h1 {
+  font-size: clamp(1.75rem, 5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 3.5vw, 2.5rem);
+}
+
+p {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+}
+
+.solo-vw {
+  font-size: 4vw;
+}
+
+.custom {
+  font-size: calc(1rem + 1vw);
+}
