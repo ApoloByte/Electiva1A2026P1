@@ -1,0 +1,11 @@
+.fixed {
+  width: 500px;
+  background: red;
+  color: white;
+}
+
+.responsive {
+  width: 100%;
+  background: green;
+  color: white;
+}

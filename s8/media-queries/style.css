@@ -1,0 +1,19 @@
+body {
+  background: blue;
+  color: white;
+  text-align: center;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  body {
+    background: green;
+  }
+}
+
+/* Móvil */
+@media (max-width: 480px) {
+  body {
+    background: red;
+  }
+}

@@ -1,0 +1,10 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid div {
+  background: purple;
+  color: white;
+  padding: 20px;
+}
