@@ -64,3 +64,4 @@ A continuación se presenta una actividad de consulta que le permitirá aprender
 - imágenes y media responsive; [clic aquí](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design#responsive_imagesmedia)
 - [Tipografía responsive](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design#responsive_typography)
 - Usando [viewport](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design#using_viewport_units_for_responsive_typography) para tipografía responsive
+
