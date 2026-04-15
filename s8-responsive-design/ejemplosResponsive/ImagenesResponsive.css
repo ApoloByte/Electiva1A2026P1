@@ -1,0 +1,4 @@
+img {
+  max-width: 100%; /* No se sale del ancho de la pantalla */
+  height: auto;    /* No se deforma (mantiene la proporción) */
+}

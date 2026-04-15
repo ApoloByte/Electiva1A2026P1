@@ -1,0 +1,26 @@
+
+header, footer { background: #333; color: white; padding: 20px; text-align: center; }
+.contenido { background: #e1f5fe; padding: 20px; }
+.lateral { background: #ffe0b2; padding: 20px; }
+
+/* --- REORGANIZACIÓN CON GRID --- */
+
+/* En Móvil: El contenedor no hace nada especial, fluye hacia abajo */
+.contenedor-principal {
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+}
+
+/* En PC (Pantallas mayores a 600px) */
+@media (min-width: 600px) {
+  .contenedor-principal {
+    /* Creamos 2 columnas: el contenido ocupa el triple que la barra lateral */
+    grid-template-columns: 3fr 1fr;
+  }
+  
+  .lateral {
+    /* Opcional: podemos decirle que sea la primera en aparecer */
+    order: -1; 
+  }
+}

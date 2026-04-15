@@ -1,0 +1,21 @@
+/* Estilos de la página */
+body { font-family: sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
+header { text-align: center; margin-bottom: 30px; }
+
+/* GRID DE LA GALERÍA  */
+.galeria {
+  display: grid;
+  /* repeat(auto-fit...) hace que las tarjetas se acomoden solas según el ancho */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Estilo para que cada tarjeta se vea como un cuadro */
+.tarjeta {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  border: 1px solid #ddd;
+}

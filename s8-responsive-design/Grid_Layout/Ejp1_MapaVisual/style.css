@@ -1,0 +1,23 @@
+
+.seccion-header { grid-area: cabecera; background: #34495e; color: white; }
+.seccion-nav    { grid-area: menu;     background: #2ecc71; }
+.seccion-main   { grid-area: principal; background: #ecf0f1; }
+.seccion-footer { grid-area: pie;      background: #bdc3c7; }
+
+/* 2. Dibujamos el mapa en el contenedor padre */
+.padre-grid {
+  display: grid;
+  gap: 10px;
+  height: 100vh; /* Para que ocupe toda la pantalla */
+
+  /* Aquí 'dibujas' cómo quieres que se vea */
+  grid-template-areas:
+    "cabecera  cabecera"
+    "menu      principal"
+    "pie       pie";
+
+  /* La primera columna mide 200px y la segunda el resto (1fr) */
+  grid-template-columns: 200px 1fr;
+  /* El header y footer se ajustan solos, el medio crece (1fr) */
+  grid-template-rows: auto 1fr auto;
+}

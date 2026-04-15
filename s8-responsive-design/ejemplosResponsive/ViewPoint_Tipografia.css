@@ -1,0 +1,4 @@
+p {
+  /* Mínimo 16px, ideal 2% del ancho, máximo 24px */
+  font-size: clamp(16px, 2vw, 24px);
+}

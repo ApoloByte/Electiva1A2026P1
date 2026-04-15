@@ -1,0 +1,34 @@
+/* --- Estilos Base (Móvil) --- */
+header {
+  background: #3498db;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column; /* Apilados: uno abajo del otro */
+  background: #f4f4f4;
+}
+
+nav a {
+  padding: 15px;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+/* --- Media Query (Pantallas de más de 600px) --- */
+@media (min-width: 600px) {
+  nav {
+    flex-direction: row; /* En fila: uno al lado del otro */
+    justify-content: center;
+  }
+
+  nav a {
+    border-bottom: none; /* Quitamos la línea divisoria */
+    width: auto;
+  }
+}
