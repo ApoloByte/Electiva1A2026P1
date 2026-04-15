@@ -1,0 +1,23 @@
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    /*grid-auto-rows: 100px;*/
+    grid-auto-rows: minmax(50px, auto);
+    
+}
+
+.uno {
+    background: red;
+}
+
+.dos {
+    background: blue;
+}
+
+.tres {
+    background: oklch(93.893% 0.2042 115.647);
+
+    /* 🔥 ocupa toda la fila */
+    grid-column: span 2;
+}

@@ -1,0 +1,25 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    text-align: center;
+}
+
+.contenedor {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    background: #ddd;
+}
+
+.caja {
+    height: 150px;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.uno { background: red; flex: 1; }
+.dos { background: blue; flex: 1; }
+.tres { background: rgb(248, 244, 12); flex: 2; }

@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* ESTILO BASE (pantallas grandes) */
+header {
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.menu {
+    display: flex;
+    gap: 1rem;
+}
+
+/* 📱 MEDIA QUERY */
+@media (max-width: 768px) {
+
+    /* Cambia layout */
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    /* Cambia colores para notar diferencia */
+    body {
+        background: lightblue;
+    }
+}

@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 20px;
+}
+
+.item {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  padding: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 12px;
+}
+
+.subgrid {
+  grid-column: 1 / 5;
+  grid-row: 1 / 5;
+  
+  display: grid;
+  grid-template-columns: subgrid;
+  gap: inherit;
+  padding: 20px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+
+.card {
+  background: white;
+  color: #333;
+  padding: 25px;
+  text-align: center;
+  font-weight: bold;
+
+}
