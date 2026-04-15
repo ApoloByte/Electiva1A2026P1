@@ -1,0 +1,33 @@
+body {
+  font-family: Arial;
+  text-align: center;
+}
+
+/* Contenedor */
+.contenedor-servicios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 20px;
+}
+
+/* Clase */ 
+.servicio {
+  background: lightgreen;
+  padding: 25px;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .contenedor-servicios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .contenedor-servicios {
+    grid-template-columns: 1fr;
+  }
+}

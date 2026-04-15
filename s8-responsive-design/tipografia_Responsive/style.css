@@ -1,0 +1,24 @@
+body {
+  font-family: Arial;
+  text-align: center;
+}
+
+/* Tipografía flexible */
+.titulo {
+  font-size: 6vw;
+}
+
+.descripcion {
+  font-size: 2.5vw;
+}
+
+/* Ajuste en pantallas pequeñas */
+@media (max-width: 600px) {
+  .titulo {
+    font-size: 24px;
+  }
+
+  .descripcion {
+    font-size: 16px;
+  }
+}
