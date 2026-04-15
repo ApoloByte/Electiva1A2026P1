@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Virtual - JS Vanilla</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Mi Tienda Virtual</h1>
+    </header>
+
+    <main class="container">
+        <section class="products-section">
+            <h2>Catálogo de Productos</h2>
+            <div id="products-container"></div>
+        </section>
+
+        <aside class="cart-section">
+            <h2>Tu Carrito</h2>
+            <div id="cart-container"></div>
+            <div class="cart-footer">
+                <p><strong>Total a pagar:</strong> $<span id="cart-total">0</span></p>
+                <button id="checkout-btn">Simular Compra</button>
+            </div>
+        </aside>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
