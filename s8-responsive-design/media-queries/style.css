@@ -1,0 +1,21 @@
+body {
+  font-family: Arial;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  background: black;
+}
+
+nav li {
+  color: white;
+  padding: 15px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
