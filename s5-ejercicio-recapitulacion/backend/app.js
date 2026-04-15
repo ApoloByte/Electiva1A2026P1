@@ -12,7 +12,7 @@ app.get('/products', (req, res) => {
   res.json(products);
 });
 
-// --- RUTA: Obtener el contenido del carrito ---
+// --- RUTA: Obtener el contenido del Carrito ---
 app.get('/cart', (req, res) => {
   const items = db.prepare(`
     SELECT cart_items.id, products.name, products.price, cart_items.quantity, 

@@ -37,7 +37,7 @@ imagenes.forEach(function(img){
 
 
 
-// EJERCICIO 4
+// EJERCICIO 4..
 document.getElementById("ejercicio4").addEventListener("click", function(){
 
 let tareas = document.querySelectorAll(".tareas li:nth-child(odd)");

@@ -20,7 +20,7 @@ console.log(texto[3]); // Imprime "d"
 console.log("---Metodos de busqueda---");
 console.log(texto.indexOf("lo")); // Imprime 11
 console.log(texto.lastIndexOf("web")); // Imprime 14
-console.log(texto.includes("El")); // Imprime true
+console.log(texto.includes("El")); // Imprime true..
 
 // Metodos de reemplazo
 console.log("---Metodos de reemplazo---");
