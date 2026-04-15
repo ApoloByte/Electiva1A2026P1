@@ -15,6 +15,7 @@ async function fetchUser() {
         console.log("data", data);
     } catch (error) {
         console.error("Error al obtener data:", error);
+        
     }
 }
 fetchUser();

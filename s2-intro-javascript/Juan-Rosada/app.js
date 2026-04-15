@@ -17,7 +17,7 @@ console.log(texto[4]); // Imprime "e"
 
 
 console.log("Metodos de busqueda");
-console.log(texto.indexOf("de")); // Imprime "3"
+console.log(texto.indexOf("de")); // Imprime "2"
 console.log(texto.lastIndexOf("E")); // Imprime "0"
 console.log(texto.includes("web")) // Imprime "True"
 

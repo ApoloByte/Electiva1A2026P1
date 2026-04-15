@@ -23,3 +23,5 @@ for (let i = 0; i < parrafos.length; i++) {
 	parrafos[i].style.backgroundColor = 'blue';
 	parrafos[i].style.fontWeight = 'bold';
 }
+
+

@@ -9,18 +9,18 @@ const app = express();
 const db = new sqlite3.Database('./database.db'); 
 db.run("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age TEXT)");
 
-// --- MIDDLEWARES ---
+
 app.use(bodyParser.json());
 app.use(cors());
 
-// Objeto de prueba (puedes dejarlo o quitarlo si ya usas la DB)
+// Objeto de prueba 
 const usr = {
     name: 'María',
     age: '33',
     email: 'maria.gmail.com'
 };
 
-// --- RUTAS GET ---
+//  GET 
 
 // Saludo
 app.get('/hello/:name', (req, res) => {
@@ -45,7 +45,7 @@ app.post('/user', (req, res) => {
     const sql = "INSERT INTO users (name, age) VALUES (?, ?)";
     db.run(sql, [name, age], function(err) {
         if (err) return res.status(500).send(err.message);
-        res.json({ 
+        res.json({  
             message: "Usuario guardado en base de datos",
             id: this.lastID, 
             name, 
@@ -54,13 +54,13 @@ app.post('/user', (req, res) => {
     });
 });
 
-// --- RUTAS PUT Y DELETE (SIMULADAS) ---
+// --- RUTAS PUT Y DELETE ---
 app.put('/user', (req, res) => {
-    res.json({ message: "Usuario actualizado (simulado)" });
+    res.json({ message: "Usuario actualizado " });
 });
 
 app.delete('/user', (req, res) => {
-    res.json({ message: "Usuario eliminado (simulado)" });
+    res.json({ message: "Usuario eliminado " });
 });
 
 // --- INICIO DEL SERVIDOR ---
