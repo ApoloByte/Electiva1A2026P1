@@ -1,0 +1,39 @@
+body {
+    background: #111;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+header {
+    background: #333;
+    padding: 20px;
+}
+
+nav a {
+    display: block;
+    color: #0085cc;
+    padding: 10px;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+
+@media (min-width: 600px) {
+    body {
+        text-align: left;
+    }
+
+    nav a {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    header {
+        border-bottom: 4px solid #0029cc;
+    }
+}
