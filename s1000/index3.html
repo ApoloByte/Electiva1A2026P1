@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Queries</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      padding: 20px;
+      background-color: lightblue;
+    }
+
+    .caja {
+      width: 100%;
+      padding: 20px;
+      background-color: blue;
+      color: white;
+      text-align: center;
+    }
+
+    /* MEDIA QUERY */
+    @media (max-width: 768px) {
+      body {
+        background-color: lightgreen;
+      }
+
+      .caja {
+        background-color: red;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Ejemplo Media Queries</h1>
+  <p>Cambia el tamaño de la pantalla para ver el efecto.</p>
+
+  <div class="caja">
+    Esta caja cambia de color
+  </div>
+
+</body>
+</html>

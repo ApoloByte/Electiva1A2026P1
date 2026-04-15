@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout Responsive</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .caja {
+      flex: 1;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .roja {
+      background-color: red;
+    }
+
+    .azul {
+      background-color: blue;
+    }
+
+    /* MEDIA QUERY */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Layout en columnas</h1>
+  <p>Cambia el tamaño de la pantalla para ver el efecto.</p>
+
+  <div class="container">
+    <div class="caja roja">Caja 1</div>
+    <div class="caja azul">Caja 2</div>
+  </div>
+
+</body>
+</html>
