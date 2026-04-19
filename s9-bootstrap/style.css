@@ -1,36 +1,35 @@
-.pos-fixed {
-    background-color: rgba(0, 64, 255, 0.5);
-    /* position: fixed; */
-    top: 10px;
-    z-index: 1;
+/* --- MEJORAS PARA EL CARRUSEL DE BOOTSTRAP --- */
+
+/* 1. Limitar el tamaño para que el Husky no ocupe toda la pantalla */
+#carouselExample {
+    max-width: 800px;
+    margin: 50px auto; /* Lo centra y le da aire arriba/abajo */
+    border-radius: 20px;
+    overflow: hidden; /* Corta las esquinas de las imágenes para que sean redondas */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-.pos-static {
-    background-color: rgba(0, 255, 17, 0.5);
-    position: static;
-    top: 10px;
-    z-index: 1;
+/* 2. Asegurar que todas las fotos tengan el mismo tamaño sin deformarse */
+.carousel-item img {
+    height: 500px; /* Ajusta esta altura a tu gusto */
+    object-fit: cover; /* ¡Esto es lo más importante para que se vea profesional! */
+    filter: brightness(0.9); /* Un toque sutil de oscuridad para que resalte el entorno */
+    transition: transform 0.5s ease;
 }
 
-.pos-sticky {
-    background-color: rgb(0, 255, 255, 0.5);
-    /* position: sticky; */
-    top: 10px;
-    z-index: -1000;
+/* 3. Estilo de los botones (flechas) */
+.carousel-control-prev, .carousel-control-next {
+    width: 10%; /* Los hace más delgados y elegantes */
 }
 
-.pos-relative {
-    position: relative;
-    top: 2000px;
-    right: 10px;
-    background-color: rgb(165, 42, 42, 0.5);
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo circular para las flechas */
+    border-radius: 50%;
+    padding: 20px;
 }
 
-.pos-absolute {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    left: 10px;
-    z-index: -10;
-    background-color: rgb(138, 43, 226, 0.5);
+/* 4. Efecto de zoom suave al pasar el mouse */
+.carousel-item:hover img {
+    transform: scale(1.03);
+    filter: brightness(1);
 }
