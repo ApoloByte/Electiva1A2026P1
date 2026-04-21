@@ -1,36 +1,51 @@
-.pos-fixed {
-    background-color: rgba(0, 64, 255, 0.5);
-    /* position: fixed; */
-    top: 10px;
-    z-index: 1;
+:root {
+    --husky-primary: #2c3e50;
+    --husky-accent: #3498db;
+    --carousel-height: 500px;
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --border-radius: 25px;
 }
 
-.pos-static {
-    background-color: rgba(0, 255, 17, 0.5);
-    position: static;
-    top: 10px;
-    z-index: 1;
+body {
+    background-color: #f8f9fa;
 }
 
-.pos-sticky {
-    background-color: rgb(0, 255, 255, 0.5);
-    /* position: sticky; */
-    top: 10px;
-    z-index: -1000;
+.husky-title {
+    font-weight: 800;
+    color: var(--husky-primary);
+    text-transform: uppercase;
 }
 
-.pos-relative {
-    position: relative;
-    top: 2000px;
-    right: 10px;
-    background-color: rgb(165, 42, 42, 0.5);
+.custom-husky-carousel {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border: 6px solid white;
 }
 
-.pos-absolute {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    left: 10px;
-    z-index: -10;
-    background-color: rgb(138, 43, 226, 0.5);
+.carousel-item img {
+    height: var(--carousel-height);
+    object-fit: cover;
+    transition: transform 6s linear; 
+}
+
+.carousel-item.active img {
+    transform: scale(1.15);
+}
+
+.carousel-caption {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    bottom: 30px;
+}
+
+.control-wrapper {
+    background-color: rgba(255,255,255,0.3);
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
 }
