@@ -34,3 +34,38 @@
     z-index: -10;
     background-color: rgb(138, 43, 226, 0.5);
 }
+/* Limitar la altura del carrusel para que no sea gigante */
+.custom-carousel {
+    height: 500px; /* Altura fija para escritorio */
+    background-color: #000; /* Fondo negro por si la imagen tarda en cargar */
+}
+
+.custom-carousel img {
+    /* Esto es CLAVE: hace que la imagen se adapte sin deformarse */
+    object-fit: cover; 
+    height: 100%;
+}
+/* Forzar que los botones de flecha sean visibles (color oscuro) */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Círculo oscuro detrás de la flecha */
+    border-radius: 50%;
+    padding: 15px;
+}
+
+/* Asegurar que el texto esté siempre arriba de la imagen */
+.carousel-caption {
+    z-index: 10;
+    bottom: 20px;
+}
+/* Ajuste para móviles: que sea más bajito */
+@media (max-width: 768px) {
+    .custom-carousel {
+        height: 300px;
+    }
+}
+
+/* Mejora visual de los botones de control */
+.carousel-control-prev, .carousel-control-next {
+    width: 5%; /* Más sutiles */
+}
