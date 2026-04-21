@@ -1,0 +1,147 @@
+:root {
+  --bs-primary: #5a67d8;
+  --carousel-height: 500px;
+  --carousel-radius: 15px;
+  --carousel-overlay: rgba(0, 0, 0, 0.35);
+}
+
+body {
+  background-color: var(--bs-gray-100);
+}
+
+.carousel {
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: var(--carousel-radius);
+  overflow: hidden;
+  box-shadow: var(--bs-box-shadow-lg);
+  position: relative;
+}
+
+.carousel-item {
+  position: relative; 
+}
+
+.carousel-item img {
+  height: var(--carousel-height);
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.carousel:hover img {
+  transform: scale(1.03);
+}
+
+.carousel-item::after {
+  content: "";
+  position: absolute; /* 👈 AQUÍ usas absolute */
+  inset: 0;
+  background: var(--carousel-overlay);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: var(--bs-primary);
+  border-radius: 50%;
+  padding: 18px;
+  transition: 0.3s;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  transform: scale(1.2);
+  background-color: #434190;
+}
+
+.pos-fixed {
+  background-color: rgba(0, 64, 255, 0.5);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; 
+}
+
+.pos-static {
+  background-color: rgba(0, 255, 17, 0.5);
+  position: static;
+}
+
+.pos-sticky {
+  background-color: rgba(0, 255, 255, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 999; 
+}
+
+.pos-relative {
+  position: relative;
+  background-color: rgba(165, 42, 42, 0.3);
+}
+
+.pos-absolute {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10; 
+  background-color: rgba(138, 43, 226, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --carousel-height: 320px;
+  }
+
+  .carousel {
+    margin: 30px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --carousel-height: 220px;
+  }
+
+  .carousel {
+    margin: 20px 10px;
+  }
+}
+
+.pos-fixed {
+    background-color: rgba(0, 64, 255, 0.5);
+    /* position: fixed; */
+    top: 10px;
+    z-index: 1;
+}
+
+.pos-static {
+    background-color: rgba(0, 255, 17, 0.5);
+    position: static;
+    top: 10px;
+    z-index: 1;
+}
+
+.pos-sticky {
+    background-color: rgb(0, 255, 255, 0.5);
+    /* position: sticky; */
+    top: 10px;
+    z-index: -1000;
+}
+
+.pos-relative {
+    position: relative;
+    top: 2000px;
+    right: 10px;
+    background-color: rgb(165, 42, 42, 0.5);
+}
+
+.pos-absolute {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    z-index: -10;
+    background-color: rgb(138, 43, 226, 0.5);
+}
