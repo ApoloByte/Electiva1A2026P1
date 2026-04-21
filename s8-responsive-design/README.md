@@ -1,37 +1,5 @@
-# Diseño Web Responsive - Ejemplos Prácticos
-
-Este repositorio contiene ejemplos prácticos de diseño web responsive organizados por tema.
-
-## Estructura de Carpetas
-
-```
-s8-responsive-design/
-├── 1-fixed-vs-responsive/     # Comparación diseño fijo vs responsive
-├── 2-semantic-tags/           # Etiquetas semánticas HTML5
-├── 3-media-queries/           # Media queries y menú responsive
-├── 4-flexbox/                 # Layout con Flexbox
-├── 5-css-grid/                # CSS Grid Layout (2 ejemplos)
-├── 6-responsive-images/      # Imágenes responsive
-├── 7-responsive-typography/  # Tipografía responsive
-└── 8-viewport-units/         # Unidades viewport
-```
-
-## Ejemplos Creados
-
-| Carpeta | Tema | Descripción |
-|---------|------|-------------|
-| `1-fixed-vs-responsive/` | Diseño Fijo vs Responsive | Comparación visual con anchos fijos (px) vs relativos (%) |
-| `2-semantic-tags/` | Etiquetas Semánticas | Uso de header, nav, main, article, section, aside, footer |
-| `3-media-queries/` | Media Queries | Menú hamburguesa que cambia a partir de 768px |
-| `4-flexbox/` | Flexbox | Layout Holy Grail y reorganización de contenido |
-| `5-css-grid/` | CSS Grid | grid-template-areas + auto-fit/auto-fill |
-| `6-responsive-images/` | Imágenes Responsive | srcset, picture, object-fit, lazy loading |
-| `7-responsive-typography/` | Tipografía Responsive | clamp(), rem, unidades viewport |
-| `8-viewport-units/` | Unidades Viewport | vw, vh, vmin, vmax, svh, dvh, lvh |
-
-## Uso
-
-Para visualizar cada ejemplo, abre el archivo `index.html` de cada carpeta en un navegador y redimensiona la ventana para ver el comportamiento responsive.
+# Diseño responsive
+[link a notion](/33c04bbd869d8065a8d4ff252f07abe9?pvs=25#33c04bbd869d8037ab9ec96c1e2720d4)
 
 El diseño responsive busca que la página web se adapte a distintos tamaños de pantalla sin perder usabilidad, evitando anchos fijos y aprovechando técnicas como media queries y layouts flexibles.
 
