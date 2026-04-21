@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel de Huskies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./position.html">Position</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="./huskie.html">Huskie</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="carousel-container">
+        <div class="carousel-wrapper">
+            <div class="progress-bar-wrap">
+                <div class="progress-bar-fill" id="progressBar"></div>
+            </div>
+
+            <div class="carousel-track" id="track">
+                <div class="slide is-active">
+                    <img class="slide-img" src="nieve.webp" alt="Husky en la nieve">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <div class="slide-badge">Siberian Husky</div>
+                        <div class="slide-title">Espíritu de la Tundra</div>
+                        <div class="slide-desc">
+                            Ojos de hielo, alma de lobo. El Husky Siberiano nació para correr
+                            kilómetros sin fin bajo la aurora boreal.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img class="slide-img" src="mirada.webp" alt="Husky cara">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <div class="slide-badge">Mirada única</div>
+                        <div class="slide-title">Ojos Bicolores</div>
+                        <div class="slide-desc">
+                            La heterocromía es su rasgo más misterioso: un ojo azul hielo,
+                            otro ámbar dorado. Cada Husky es irrepetible.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <img class="slide-img" src="cachorro.jpg" alt="Husky cachorro">
+                    <div class="slide-overlay"></div>
+                    <div class="slide-content">
+                        <div class="slide-badge">Cachorro Husky</div>
+                        <div class="slide-title">Pequeño pero Veloz</div>
+                        <div class="slide-desc">
+                            Desde cachorros muestran su espíritu salvaje. Curiosos,
+                            juguetones y llenos de energía desde el primer día.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-controls">
+            <div class="dots" id="dots">
+                <button class="dot active" onclick="goTo(0)"></button>
+                <button class="dot" onclick="goTo(1)"></button>
+                <button class="dot" onclick="goTo(2)"></button>
+            </div>
+            <span class="slide-counter" id="counter">01 / 03</span>
+            <div class="ctrl-btns">
+                <button class="ctrl-btn" onclick="move(-1)">&#8592;</button>
+                <button class="ctrl-btn" onclick="move(1)">&#8594;</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let cur = 0;
+        const total = 3;
+        let timer;
+
+        const track = document.getElementById('track');
+        const counter = document.getElementById('counter');
+        const bar = document.getElementById('progressBar');
+        const slides = document.querySelectorAll('.slide');
+        const dotEls = document.querySelectorAll('.dot');
+
+        function goTo(n) {
+            slides[cur].classList.remove('is-active');
+            dotEls[cur].classList.remove('active');
+
+            cur = (n + total) % total;
+
+            track.style.transform = `translateX(-${cur * 100}%)`;
+            slides[cur].classList.add('is-active');
+            dotEls[cur].classList.add('active');
+            counter.textContent = `0${cur + 1} / 0${total}`;
+
+            bar.style.transition = 'none';
+            bar.style.width = '0%';
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    bar.style.transition = 'width 4s linear';
+                    bar.style.width = '100%';
+                });
+            });
+        }
+
+        function move(dir) {
+            goTo(cur + dir);
+            resetTimer();
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            timer = setInterval(() => move(1), 4000);
+        }
+
+        goTo(0);
+        resetTimer();
+    </script>
+
+</body>
+
+</html>
