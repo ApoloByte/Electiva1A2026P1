@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f0f0f0;
+}
+
+h1 { color: #333; }
+h2 { color: #555; margin-top: 30px; font-size: 1.1rem; }
+p { color: #666; }
+
+.contenedor {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+.galeria {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.cover {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    .galeria {
+        flex-direction: column;
+    }
+    
+    .cover {
+        width: 100%;
+        height: 200px;
+    }
+}

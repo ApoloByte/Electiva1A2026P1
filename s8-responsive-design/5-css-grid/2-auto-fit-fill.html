@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto-fit vs Auto-fill</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <h1>Auto-fit vs Auto-fill</h1>
+
+    <h2>repeat(auto-fit, minmax(100px, 1fr))</h2>
+    <p>Los elementos se expanden para ocupar el espacio disponible</p>
+    <div class="grid autofi">
+        <div class="caja">1</div>
+        <div class="caja">2</div>
+        <div class="caja">3</div>
+    </div>
+
+    <h2>repeat(auto-fill, minmax(100px, 1fr))</h2>
+    <p>Mantiene el espacio aunque no haya más elementos</p>
+    <div class="grid autofill">
+        <div class="caja">1</div>
+        <div class="caja">2</div>
+        <div class="caja">3</div>
+    </div>
+</body>
+</html>

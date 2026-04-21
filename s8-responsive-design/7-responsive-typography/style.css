@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f0f0f0;
+    font-size: 16px;
+}
+
+h1 { color: #333; }
+h2 { color: #555; margin-top: 30px; font-size: 1.2rem; }
+
+.texto-rem {
+    font-size: 1.5rem;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.texto-clamp {
+    font-size: clamp(1rem, 2vw + 0.5rem, 2rem);
+    background: #3498db;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.texto-media {
+    font-size: 1.2rem;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.medida-optima {
+    max-width: 65ch;
+    line-height: 1.6;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    .texto-media {
+        font-size: 0.9rem;
+    }
+}

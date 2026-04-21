@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes Responsive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Imágenes Responsive</h1>
+
+    <h2>1. img con width: 100%</h2>
+    <p>La imagen se adapta al contenedor:</p>
+    <div class="contenedor">
+        <img src="https://picsum.photos/800/400" alt="Ejemplo" class="img-fluid">
+    </div>
+
+    <h2>2. srcset (diferentes tamaños)</h2>
+    <img 
+        src="https://picsum.photos/600/300" 
+        srcset="
+            https://picsum.photos/300/150 300w,
+            https://picsum.photos/600/300 600w,
+            https://picsum.photos/900/450 900w
+        "
+        sizes="(max-width: 600px) 100vw, 50vw"
+        alt="srcset ejemplo"
+        class="img-fluid"
+    >
+
+    <h2>3. picture (cambiar imagen según tamaño)</h2>
+    <picture>
+        <source media="(max-width: 600px)" srcset="https://picsum.photos/400/400">
+        <source media="(max-width: 900px)" srcset="https://picsum.photos/600/400">
+        <img src="https://picsum.photos/800/400" alt="picture ejemplo" class="img-fluid">
+    </picture>
+
+    <h2>4. object-fit: cover</h2>
+    <div class="galeria">
+        <img src="https://picsum.photos/400/400" class="cover" alt="Cover 1">
+        <img src="https://picsum.photos/400/400" class="cover" alt="Cover 2">
+        <img src="https://picsum.photos/400/400" class="cover" alt="Cover 3">
+    </div>
+
+    <h2>5. lazy loading</h2>
+    <p>Las imágenes solo cargan cuando entran en pantalla:</p>
+    <div class="galeria">
+        <img src="https://picsum.photos/300/200?1" loading="lazy" class="cover" alt="Lazy 1">
+        <img src="https://picsum.photos/300/200?2" loading="lazy" class="cover" alt="Lazy 2">
+        <img src="https://picsum.photos/300/200?3" loading="lazy" class="cover" alt="Lazy 3">
+    </div>
+</body>
+</html>
