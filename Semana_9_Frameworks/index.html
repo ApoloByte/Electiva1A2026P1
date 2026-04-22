@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huskies</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow sticky-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold">Husky</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="position.html">Position</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= CAROUSEL PRO ================= -->
+<section class="carousel-section">
+
+  <div id="carouselHuskies" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+    <!-- INDICADORES -->
+    <div class="carousel-indicators">
+      <button data-bs-target="#carouselHuskies" data-bs-slide-to="0" class="active"></button>
+      <button data-bs-target="#carouselHuskies" data-bs-slide-to="1"></button>
+      <button data-bs-target="#carouselHuskies" data-bs-slide-to="2"></button>
+    </div>
+
+    <div class="carousel-inner">
+
+      <!-- SLIDE 1 -->
+      <div class="carousel-item active">
+        <div class="img-wrap">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Siberian_Husky_-_Mika.jpg" class="d-block w-100 carousel-img">
+        </div>
+
+        <div class="carousel-caption text-start">
+          <span class="tag">Aventura</span>
+          <h2 class="title">Husky Siberiano</h2>
+          <p class="desc">Fuerza, elegancia y resistencia en climas extremos.</p>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="carousel-item">
+        <div class="img-wrap">
+          <img src="https://cdn.wamiz.fr/cdn-cgi/image/format=auto,quality=80,width=532,height=532,fit=cover/animal/breed/dog/adult/668c0c22a4bcf765839764.jpg" class="d-block w-100 carousel-img">
+        </div>
+
+        <div class="carousel-caption text-start">
+          <span class="tag">Energía</span>
+          <h2 class="title">Activos y juguetones</h2>
+          <p class="desc">Necesitan ejercicio diario y estimulación constante.</p>
+        </div>
+      </div>
+
+      <!-- SLIDE 3 -->
+      <div class="carousel-item">
+        <div class="img-wrap">
+          <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1" class="d-block w-100 carousel-img">
+        </div>
+
+        <div class="carousel-caption text-start">
+          <span class="tag">Compañía</span>
+          <h2 class="title">Leales y sociables</h2>
+          <p class="desc">Perfectos compañeros para familias activas.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CONTROLES -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselHuskies" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselHuskies" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+</section>
+
+<!-- CONTENIDO -->
+<main class="container py-5">
+  <h1 class="text-center mb-5">Amantes de los Huskies</h1>
+
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <div class="card custom-card h-100 text-center">
+        <div class="card-body">
+          <h5>Inteligentes</h5>
+          <p>Aprenden rápido y son muy curiosos</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card custom-card h-100 text-center">
+        <div class="card-body">
+          <h5>Energéticos</h5>
+          <p>Necesitan ejercicio constante</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card custom-card h-100 text-center">
+        <div class="card-body">
+          <h5>Amigables</h5>
+          <p>Muy sociables con personas y otros perros</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white text-center p-3">
+  © 2026 Tatiana Muñoz Daza - Todos los derechos reservados
+</footer>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

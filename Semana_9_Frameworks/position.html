@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamiento CSS — Bootstrap 5</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+        /* Estilos específicos de esta página */
+
+        /* Colores por tipo de posición */
+        :root {
+            --c-static:   #6c757d;
+            --c-relative: #c8497f;
+            --c-absolute: #a368b5;
+            --c-fixed:    #2d6a4f;
+            --c-sticky:   #a368b5;
+        }
+
+        /* Hero de la página */
+        .pos-hero {
+            background: #0f1e2d;
+            padding: 4rem 0 3rem;
+            color: #fff;
+        }
+
+        .pos-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.15;
+        }
+
+        .pos-hero p {
+            color: rgba(255,255,255,0.6);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .pos-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-family: 'Jost', sans-serif;
+        }
+
+        /* Tabla comparativa */
+        .compare-table th {
+            background: #0f1e2d;
+            color: #fff;
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 0.9rem 1rem;
+        }
+
+        .compare-table td {
+            font-size: 0.9rem;
+            padding: 0.85rem 1rem;
+            vertical-align: middle;
+        }
+
+        /* Secciones de posición */
+        .pos-section {
+            padding: 4.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .pos-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .pos-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .pos-type-label {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .pos-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-top: 0.4rem;
+        }
+
+        .pos-section p.desc {
+            color: #5a6473;
+            line-height: 1.75;
+        }
+
+        .use-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0;
+        }
+
+        .use-list li {
+            font-size: 0.9rem;
+            color: #444;
+            padding: 0.35rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .use-list li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: #aaa;
+        }
+
+        /* Bloque de código */
+        .code-block {
+            background: #0f1e2d;
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            overflow-x: auto;
+            margin-top: 1.25rem;
+        }
+
+        .code-block pre {
+            margin: 0;
+            color: #cdd3db;
+            font-size: 0.83rem;
+            line-height: 1.7;
+            font-family: 'Fira Code', 'Consolas', monospace;
+        }
+
+        .ck-prop    { color: #e897d8; }
+        .ck-val     { color: #9fe5a0; }
+        .ck-sel     { color: #f7e08a; }
+        .ck-comment { color: #526070; }
+
+        /* Tarjeta de demo visual */
+        .demo-card {
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 1.5rem;
+            background: #fff;
+        }
+
+        .demo-card .demo-note {
+            font-size: 0.82rem;
+            color: #888;
+            margin-bottom: 1rem;
+        }
+
+        /* -- DEMO STATIC -- */
+        .demo-static .box {
+            background: var(--c-static);
+            color: #fff;
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        /* -- DEMO RELATIVE -- */
+        .demo-relative .box-placeholder {
+            border: 2px dashed rgba(26,107,150,0.35);
+            background: rgba(26,107,150,0.05);
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            font-size: 0.83rem;
+            color: #1a6b96;
+        }
+
+        .demo-relative .box-moved {
+            position: relative;
+            top: 16px;
+            left: 24px;
+            background: var(--c-relative);
+            color: #fff;
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        /* -- DEMO ABSOLUTE -- */
+        .demo-absolute-wrap {
+            position: relative;
+            height: 180px;
+            background: #f1f4f7;
+            border: 2px dashed rgba(192,57,43,0.25);
+            border-radius: 10px;
+        }
+
+        .demo-absolute-wrap .ref-label {
+            position: absolute;
+            top: 0.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.78rem;
+            color: #aaa;
+            white-space: nowrap;
+        }
+
+        .abs-box {
+            position: absolute;
+            background: var(--c-absolute);
+            color: #fff;
+            padding: 0.4rem 0.75rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-family: 'Jost', sans-serif;
+        }
+
+        .abs-tl { top: 0.75rem; left: 0.75rem; }
+        .abs-tr { top: 0.75rem; right: 0.75rem; }
+        .abs-bl { bottom: 0.75rem; left: 0.75rem; }
+        .abs-br { bottom: 0.75rem; right: 0.75rem; }
+        .abs-cc { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+        /* -- DEMO FIXED -- */
+        .demo-fixed-info {
+            background: #f1f4f7;
+            border: 2px dashed rgba(45,106,79,0.25);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .demo-fixed-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--c-fixed);
+            color: #fff;
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-family: 'Jost', sans-serif;
+            font-weight: 500;
+        }
+
+        /* Botón fijo real en pantalla */
+        .btn-back-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--c-fixed);
+            color: #fff;
+            border: none;
+            padding: 0.65rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-family: 'Jost', sans-serif;
+            font-weight: 600;
+            box-shadow: 0 6px 20px rgba(45,106,79,0.3);
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-back-top:hover {
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 28px rgba(45,106,79,0.4);
+        }
+
+        /* -- DEMO STICKY -- */
+        .demo-sticky-scroll {
+            height: 280px;
+            overflow-y: scroll;
+            border: 2px dashed rgba(163,104,181,0.3);
+            border-radius: 10px;
+            background: #f5f1fa;
+        }
+
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            background: var(--c-sticky);
+            color: #fff;
+            padding: 0.65rem 1.25rem;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .sticky-content {
+            padding: 1rem 1.25rem;
+            font-size: 0.88rem;
+            color: #555;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg site-navbar">
+            <div class="container">
+                <a class="navbar-brand site-brand" href="./index.html">Husky</a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navPos">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navPos">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./position.html">Position</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Secciones
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-sm">
+                                <li><a class="dropdown-item" href="#static">Static</a></li>
+                                <li><a class="dropdown-item" href="#relative">Relative</a></li>
+                                <li><a class="dropdown-item" href="#absolute">Absolute</a></li>
+                                <li><a class="dropdown-item" href="#fixed">Fixed</a></li>
+                                <li><a class="dropdown-item" href="#sticky">Sticky</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex gap-2" role="search">
+                        <input class="form-control form-control-sm" type="search" placeholder="Search">
+                        <button class="btn btn-outline-success btn-sm" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="pos-hero">
+        <div class="container">
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-7">
+                    <span class="pos-tag mb-3 d-inline-block"
+                        style="background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.7)">
+                        CSS — MDN Reference
+                    </span>
+                    <h1>Posicionamiento CSS</h1>
+                    <p class="mt-3">
+                        La propiedad <code style="color:#e897d8">position</code> especifica cómo
+                        un elemento es posicionado en el documento. Las propiedades
+                        <code style="color:#e897d8">top</code>,
+                        <code style="color:#e897d8">right</code>,
+                        <code style="color:#e897d8">bottom</code> y
+                        <code style="color:#e897d8">left</code>
+                        determinan la ubicación final de los elementos posicionados.
+                    </p>
+                </div>
+                <div class="col-lg-5">
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="pos-tag" style="background:rgba(108,117,125,0.2);color:#adb5bd">static</span>
+                        <span class="pos-tag" style="background:rgba(200,73,127,0.25);color:#c8497f">relative</span>
+                        <span class="pos-tag" style="background:rgba(163,104,181,0.25);color:#a368b5">absolute</span>
+                        <span class="pos-tag" style="background:rgba(45,106,79,0.25);color:#80c4a0">fixed</span>
+                        <span class="pos-tag" style="background:rgba(163,104,181,0.2);color:#a368b5">sticky</span>
+                    </div>
+                    <p class="mt-3" style="color:rgba(255,255,255,0.4);font-size:0.85rem">
+                        Complementadas con
+                        <code style="color:rgba(255,255,255,0.5)">top</code>,
+                        <code style="color:rgba(255,255,255,0.5)">bottom</code>,
+                        <code style="color:rgba(255,255,255,0.5)">left</code>,
+                        <code style="color:rgba(255,255,255,0.5)">right</code> y
+                        <code style="color:rgba(255,255,255,0.5)">z-index</code>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TABLA COMPARATIVA -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:1.5rem">
+                Comparación rápida
+            </h2>
+            <div class="table-responsive rounded-3 overflow-hidden border">
+                <table class="table table-hover compare-table mb-0">
+                    <thead>
+                        <tr>
+                            <th>Valor</th>
+                            <th>Flujo normal</th>
+                            <th>Referencia de posición</th>
+                            <th>Comportamiento con scroll</th>
+                            <th>Uso típico</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="pos-tag" style="background:rgba(108,117,125,0.12);color:var(--c-static)">static</span></td>
+                            <td>Sí</td>
+                            <td>No aplica</td>
+                            <td>Se mueve con el contenido</td>
+                            <td>Elementos normales de página</td>
+                        </tr>
+                        <tr>
+                            <td><span class="pos-tag" style="background:rgba(200,73,127,0.1);color:var(--c-relative)">relative</span></td>
+                            <td>Sí (ocupa espacio original)</td>
+                            <td>Su posición original</td>
+                            <td>Se mueve con el contenido</td>
+                            <td>Ajustes, contenedor de absolutos</td>
+                        </tr>
+                        <tr>
+                            <td><span class="pos-tag" style="background:rgba(163,104,181,0.1);color:var(--c-absolute)">absolute</span></td>
+                            <td>No</td>
+                            <td>Ancestro posicionado más cercano</td>
+                            <td>Relativo a su contenedor</td>
+                            <td>Badges, tooltips, overlays</td>
+                        </tr>
+                        <tr>
+                            <td><span class="pos-tag" style="background:rgba(45,106,79,0.1);color:var(--c-fixed)">fixed</span></td>
+                            <td>No</td>
+                            <td>Viewport (ventana del navegador)</td>
+                            <td>No se mueve nunca</td>
+                            <td>Navbar fija, botón flotante</td>
+                        </tr>
+                        <tr>
+                            <td><span class="pos-tag" style="background:rgba(163,104,181,0.1);color:var(--c-sticky)">sticky</span></td>
+                            <td>Sí (hasta el umbral)</td>
+                            <td>Ancestro scroll más cercano</td>
+                            <td>Se pega al cruzar el umbral</td>
+                            <td>Headers, sidebars, tablas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- STATIC -->
+    <section id="static" class="pos-section">
+        <div class="container">
+            <div class="row gy-4 align-items-start">
+                <div class="col-lg-6">
+                    <p class="pos-type-label" style="color:var(--c-static)">01 — Static</p>
+                    <h2>position: static</h2>
+                    <p class="desc mt-2">
+                        Valor por defecto de todos los elementos HTML. El elemento sigue el flujo
+                        normal del documento sin desplazarse. Las propiedades
+                        <code>top</code>, <code>bottom</code>, <code>left</code>, <code>right</code>
+                        y <code>z-index</code> no tienen ningún efecto sobre él.
+                    </p>
+                    <ul class="use-list">
+                        <li>Párrafos, encabezados y divs de contenido normal.</li>
+                        <li>Elementos que no requieren posicionamiento especial.</li>
+                        <li>Para anular un <code>position</code> aplicado por CSS externo.</li>
+                    </ul>
+                    <div class="code-block">
+                        <pre><span class="ck-sel">.elemento</span> {
+  <span class="ck-prop">position</span>: <span class="ck-val">static</span>; <span class="ck-comment">/* valor por defecto */</span>
+  <span class="ck-comment">/* top, left, right, bottom no tienen efecto */</span>
+}
+
+<span class="ck-comment">/* Clase equivalente en Bootstrap */</span>
+<span class="ck-sel">.position-static</span></pre>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="demo-card">
+                        <p class="demo-note">Los tres elementos siguen el flujo normal, uno debajo del otro.</p>
+                        <div class="demo-static d-flex flex-column gap-2">
+                            <div class="box">Elemento 1 — static</div>
+                            <div class="box" style="background:#9ea5ab">Elemento 2 — static</div>
+                            <div class="box" style="background:#b8bec4;color:#333">Elemento 3 — static</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- RELATIVE -->
+    <section id="relative" class="pos-section">
+        <div class="container">
+            <div class="row gy-4 align-items-start">
+                <div class="col-lg-6 order-lg-2">
+                    <p class="pos-type-label" style="color:var(--c-relative)">02 — Relative</p>
+                    <h2>position: relative</h2>
+                    <p class="desc mt-2">
+                        El elemento se posiciona según el flujo normal del documento, pero luego
+                        se desplaza con relación a sí mismo usando <code>top</code>, <code>left</code>,
+                        etc. El espacio original que ocupaba <strong>se conserva</strong> en el documento.
+                        Crea un contexto de posicionamiento para sus hijos absolutos.
+                    </p>
+                    <ul class="use-list">
+                        <li>Ajustar ligeramente la posición visual sin romper el layout.</li>
+                        <li>Crear un contenedor de referencia para hijos con <code>absolute</code>.</li>
+                        <li>Controlar el <code>z-index</code> de un elemento.</li>
+                    </ul>
+                    <div class="code-block">
+                        <pre><span class="ck-sel">.elemento</span> {
+  <span class="ck-prop">position</span>: <span class="ck-val">relative</span>;
+  <span class="ck-prop">top</span>: <span class="ck-val">20px</span>;   <span class="ck-comment">/* baja 20px desde su posición */</span>
+  <span class="ck-prop">left</span>: <span class="ck-val">30px</span>;  <span class="ck-comment">/* se mueve 30px a la derecha */</span>
+}
+
+<span class="ck-sel">.position-relative</span> <span class="ck-comment">/* Bootstrap */</span></pre>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="demo-card">
+                        <p class="demo-note">
+                            El elemento azul se desplazó 16px abajo y 24px a la derecha,
+                            pero el espacio punteado (posición original) se conserva en el documento.
+                        </p>
+                        <div class="demo-relative" style="background:#f0f8ff;padding:1rem;border-radius:8px">
+                            <div class="box-placeholder">Espacio original reservado</div>
+                            <div class="box-moved">Relative: top 16px, left 24px</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ABSOLUTE -->
+    <section id="absolute" class="pos-section">
+        <div class="container">
+            <div class="row gy-4 align-items-start">
+                <div class="col-lg-6">
+                    <p class="pos-type-label" style="color:var(--c-absolute)">03 — Absolute</p>
+                    <h2>position: absolute</h2>
+                    <p class="desc mt-2">
+                        El elemento es removido del flujo normal del documento, sin crearse espacio
+                        para él. Se posiciona relativo al ancestro posicionado más cercano
+                        (cualquier elemento con <code>position</code> distinto de <code>static</code>).
+                        Si no existe ninguno, se ubica relativo al <code>&lt;html&gt;</code>.
+                    </p>
+                    <ul class="use-list">
+                        <li>Badges sobre imágenes o iconos.</li>
+                        <li>Tooltips y popovers.</li>
+                        <li>Overlays y banners sobre contenido.</li>
+                        <li>Elementos decorativos fuera del flujo.</li>
+                    </ul>
+                    <div class="code-block">
+                        <pre><span class="ck-sel">.contenedor</span> {
+  <span class="ck-prop">position</span>: <span class="ck-val">relative</span>; <span class="ck-comment">/* establece el contexto */</span>
+}
+
+<span class="ck-sel">.hijo</span> {
+  <span class="ck-prop">position</span>: <span class="ck-val">absolute</span>;
+  <span class="ck-prop">top</span>: <span class="ck-val">0</span>;
+  <span class="ck-prop">right</span>: <span class="ck-val">0</span>; <span class="ck-comment">/* esquina superior derecha */</span>
+}
+
+<span class="ck-sel">.position-absolute .top-0 .end-0</span> <span class="ck-comment">/* Bootstrap */</span></pre>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="demo-card">
+                        <p class="demo-note">
+                            Cinco elementos absolutos en distintas posiciones dentro
+                            de un contenedor con <code>position: relative</code>.
+                        </p>
+                        <div class="demo-absolute-wrap">
+                            <span class="ref-label">Contenedor — position: relative</span>
+                            <div class="abs-box abs-tl">top-left</div>
+                            <div class="abs-box abs-tr">top-right</div>
+                            <div class="abs-box abs-cc">center</div>
+                            <div class="abs-box abs-bl">bottom-left</div>
+                            <div class="abs-box abs-br">bottom-right</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FIXED -->
+    <section id="fixed" class="pos-section">
+        <div class="container">
+            <div class="row gy-4 align-items-start">
+                <div class="col-lg-6 order-lg-2">
+                    <p class="pos-type-label" style="color:var(--c-fixed)">04 — Fixed</p>
+                    <h2>position: fixed</h2>
+                    <p class="desc mt-2">
+                        El elemento es removido del flujo normal. Se posiciona relativo al viewport
+                        (la ventana del navegador), y permanece en su lugar aunque el usuario haga scroll.
+                        Siempre crea un nuevo contexto de apilamiento. En documentos impresos,
+                        el elemento se coloca en la misma posición en cada página.
+                    </p>
+                    <ul class="use-list">
+                        <li>Navbars que permanecen visibles al scrollear.</li>
+                        <li>Botones flotantes de acción (FAB).</li>
+                        <li>Banners de cookies o notificaciones persistentes.</li>
+                        <li>Sidebars fijas en dashboards.</li>
+                    </ul>
+                    <div class="code-block">
+                        <pre><span class="ck-sel">.boton-flotante</span> {
+  <span class="ck-prop">position</span>: <span class="ck-val">fixed</span>;
+  <span class="ck-prop">bottom</span>: <span class="ck-val">2rem</span>;
+  <span class="ck-prop">right</span>: <span class="ck-val">2rem</span>;
+  <span class="ck-prop">z-index</span>: <span class="ck-val">1000</span>;
+}
+
+<span class="ck-sel">.position-fixed .bottom-0 .end-0</span> <span class="ck-comment">/* Bootstrap */</span></pre>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="demo-card">
+                        <p class="demo-note">
+                            El botón verde de la esquina inferior derecha de esta página
+                            es un ejemplo real de <code>position: fixed</code>.
+                        </p>
+                        <div class="demo-fixed-info">
+                            <div class="demo-fixed-pill">
+                                <i class="bi bi-pin-angle-fill"></i>
+                                Fijo en pantalla — no se mueve con el scroll
+                            </div>
+                        </div>
+                        <div class="alert alert-success mt-3 mb-0 py-2 px-3">
+                            <small>
+                                El botón "Volver arriba" de la esquina inferior derecha
+                                usa <code>position: fixed</code> en tiempo real.
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- STICKY -->
+    <section id="sticky" class="pos-section">
+        <div class="container">
+            <div class="row gy-4 align-items-start">
+                <div class="col-lg-6">
+                    <p class="pos-type-label" style="color:var(--c-sticky)">05 — Sticky</p>
+                    <h2>position: sticky</h2>
+                    <p class="desc mt-2">
+                        Híbrido entre <code>relative</code> y <code>fixed</code>. El elemento se trata
+                        como <code>relative</code> hasta que cruza un umbral definido con
+                        <code>top</code>, momento en el que se fija hasta que alcanza el límite de
+                        su contenedor padre. Requiere definir al menos un valor de
+                        <code>top</code>, <code>bottom</code>, <code>left</code> o <code>right</code>.
+                    </p>
+                    <ul class="use-list">
+                        <li>Headers de secciones que se pegan al hacer scroll.</li>
+                        <li>Navbars que solo se fijan al llegar al tope.</li>
+                        <li>Columnas laterales en layouts de dos columnas.</li>
+                        <li>Encabezados de letras en listas alfabéticas.</li>
+                    </ul>
+                    <div class="code-block">
+                        <pre><span class="ck-sel">.cabecera</span> {
+  <span class="ck-prop">position</span>: <span class="ck-val">sticky</span>;
+  <span class="ck-prop">top</span>: <span class="ck-val">0</span>; <span class="ck-comment">/* umbral: se pega al llegar aquí */</span>
+  <span class="ck-prop">z-index</span>: <span class="ck-val">100</span>;
+}
+
+<span class="ck-sel">.position-sticky .top-0</span> <span class="ck-comment">/* Bootstrap */</span></pre>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="demo-card">
+                        <p class="demo-note">
+                            Scroll dentro del contenedor para ver cómo cada encabezado
+                            se pega al tope mientras su sección está en vista.
+                        </p>
+                        <div class="demo-sticky-scroll">
+                            <div class="sticky-header">Sección A — position: sticky</div>
+                            <div class="sticky-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce consequat ipsum ac dolor suscipit, a rutrum odio fermentum. Praesent tempus libero ac sapien.</p>
+                                <p>Integer commodo mauris nec nisi hendrerit, vel ultrices arcu aliquam. Nulla facilisi. Donec eleifend libero a lacinia.</p>
+                            </div>
+                            <div class="sticky-header" style="background:#9558a0">Sección B — position: sticky</div>
+                            <div class="sticky-content">
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+                            </div>
+                            <div class="sticky-header" style="background:#8d4899">Sección C — position: sticky</div>
+                            <div class="sticky-content">
+                                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+                                <p>Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CLASES BOOTSTRAP RESUMEN -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;margin-bottom:1.5rem">
+                Clases de Bootstrap 5
+            </h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="code-block h-100">
+                        <pre><span class="ck-comment">/* Posición */</span>
+<span class="ck-sel">.position-static</span>
+<span class="ck-sel">.position-relative</span>
+<span class="ck-sel">.position-absolute</span>
+<span class="ck-sel">.position-fixed</span>
+<span class="ck-sel">.position-sticky</span>
+
+<span class="ck-comment">/* Offsets disponibles */</span>
+<span class="ck-sel">.top-0    .top-50    .top-100</span>
+<span class="ck-sel">.bottom-0 .bottom-50 .bottom-100</span>
+<span class="ck-sel">.start-0  .start-50  .start-100</span>
+<span class="ck-sel">.end-0    .end-50    .end-100</span>
+
+<span class="ck-comment">/* Transformar para centrar exacto */</span>
+<span class="ck-sel">.translate-middle</span>   <span class="ck-comment">/* X e Y */</span>
+<span class="ck-sel">.translate-middle-x</span>
+<span class="ck-sel">.translate-middle-y</span></pre>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="code-block h-100">
+                        <pre><span class="ck-comment">/* Badge sobre una imagen */</span>
+<span class="ck-sel">&lt;div</span> <span class="ck-prop">class</span>=<span class="ck-val">"position-relative"</span><span class="ck-sel">&gt;</span>
+  &lt;img src="foto.jpg" class="img-fluid"&gt;
+  &lt;span class="position-absolute
+    top-0 end-0 translate-middle
+    badge rounded-pill bg-danger"&gt;
+    Nuevo
+  &lt;/span&gt;
+&lt;/div&gt;
+
+<span class="ck-comment">/* Navbar sticky (se pega al llegar al top) */</span>
+<span class="ck-sel">&lt;nav</span> <span class="ck-prop">class</span>=<span class="ck-val">"navbar sticky-top"</span><span class="ck-sel">&gt;</span>
+  ...
+&lt;/nav&gt;
+
+<span class="ck-comment">/* Elemento centrado en su contenedor */</span>
+<span class="ck-sel">&lt;div</span> <span class="ck-prop">class</span>=<span class="ck-val">"position-relative"</span><span class="ck-sel">&gt;</span>
+  &lt;div class="position-absolute
+    top-50 start-50 translate-middle"&gt;
+    Centrado
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Botón fijo real en pantalla (ejemplo de position: fixed) -->
+    <a href="#" class="btn-back-top">
+        <i class="bi bi-arrow-up"></i>
+        Volver arriba
+    </a>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script>
+        document.querySelector('.btn-back-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+</body>
+</html>

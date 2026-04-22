@@ -1,0 +1,636 @@
+/* ================= VARIABLES ================= */
+:root {
+    --primary: #c8497f;
+    --secondary: #a368b5;
+    --accent: #2d6a4f;
+    --dark: #0a1628;
+    --light: #f5f5f5;
+}
+
+/* ================= BASE ================= */
+body {
+    font-family: 'Jost', sans-serif;
+    background: #fff;
+    color: #1c1c1c;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* ================= NAVBAR PROFESIONAL ================= */
+.site-navbar {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 0.75rem 0;
+}
+
+.site-navbar .navbar-nav .nav-link {
+    color: #666 !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.site-navbar .navbar-nav .nav-link:hover {
+    color: var(--primary) !important;
+}
+
+.site-navbar .navbar-nav .nav-link.active {
+    color: var(--primary) !important;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 0.5rem;
+}
+
+.site-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.25rem;
+    color: #c8497f !important;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    border-radius: 8px;
+}
+
+.dropdown-item {
+    padding: 0.75rem 1.25rem;
+    transition: 0.2s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item.active {
+    background: #e8f4f8;
+    color: var(--primary);
+}
+
+/* ================= HERO SECTION ================= */
+.pos-hero {
+    background: linear-gradient(135deg, #0f1e2d 0%, #1a3a4d 100%);
+    padding: 4rem 0 3rem;
+    color: #fff;
+}
+
+.pos-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+}
+
+.pos-hero p {
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 600px;
+}
+
+.pos-tag {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-family: 'Jost', sans-serif;
+    backdrop-filter: blur(10px);
+}
+
+/* ================= TABLE ================= */
+.compare-table {
+    font-size: 0.9rem;
+}
+
+.compare-table th {
+    background: #0f1e2d;
+    color: #fff;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.compare-table td {
+    padding: 1rem;
+    vertical-align: middle;
+    color: #555;
+}
+
+.compare-table tbody tr:hover {
+    background: #f5f5f5;
+}
+
+/* ================= SECTIONS ================= */
+.pos-section {
+    padding: 4.5rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.pos-section:last-of-type {
+    border-bottom: none;
+}
+
+.pos-section:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.pos-type-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pos-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-top: 0.4rem;
+    color: #1c1c1c;
+}
+
+.pos-section p.desc {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.pos-section code {
+    background: #f0f0f0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: #d63384;
+    font-family: 'Fira Code', monospace;
+}
+
+/* ================= USE LIST ================= */
+.use-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+}
+
+.use-list li {
+    font-size: 0.95rem;
+    color: #555;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.use-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* ================= CODE BLOCK ================= */
+.code-block {
+    background: #1e1e1e;
+    border-radius: 8px;
+    padding: 1.5rem;
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    border: 1px solid #333;
+}
+
+.code-block pre {
+    margin: 0;
+    color: #d4d4d4;
+    font-size: 0.85rem;
+    line-height: 1.8;
+    font-family: 'Fira Code', 'Consolas', monospace;
+}
+
+.ck-prop    { color: #e897d8; }
+.ck-val     { color: #ce9178; }
+.ck-sel     { color: #d7ba7d; }
+.ck-comment { color: #6a9955; }
+
+/* ================= DEMO CARD ================= */
+.demo-card {
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    padding: 1.75rem;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.demo-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.demo-card .demo-note {
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+}
+
+/* ================= DEMO CONTAINERS ================= */
+.demo-static .box {
+    background: #6c757d;
+    color: white;
+    padding: 0.85rem 1.25rem;
+    border-radius: 6px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.demo-relative .box-placeholder {
+    border: 2px dashed #1a6b96;
+    background: #e8f4f8;
+    padding: 0.85rem 1.25rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #1a6b96;
+    font-weight: 500;
+}
+
+.demo-relative .box-moved {
+    position: relative;
+    top: 16px;
+    left: 24px;
+    background: #1a6b96;
+    color: white;
+    padding: 0.85rem 1.25rem;
+    border-radius: 6px;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+    box-shadow: 0 2px 6px rgba(26, 107, 150, 0.2);
+}
+
+/* ================= DEMO ABSOLUTE ================= */
+
+/* ================= CAROUSEL ================= */
+
+.carousel-section {
+    background: var(--dark);
+    overflow: hidden;
+    position: relative;
+}
+
+.img-wrap {
+    overflow: hidden;
+}
+
+.carousel-img {
+    height: 550px;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: transform 0.6s ease;
+}
+
+.carousel-item.active .carousel-img {
+    transform: scale(1.05);
+}
+
+/* CAPTION */
+.carousel-caption {
+    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 3rem;
+    text-align: left;
+}
+
+/* TEXTO */
+.tag {
+    background: var(--secondary);
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.desc {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.95rem;
+}
+
+/* CONTROLES */
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.carousel-section:hover .carousel-control-prev,
+.carousel-section:hover .carousel-control-next {
+    opacity: 1;
+}
+
+/* INDICADORES */
+.carousel-indicators button {
+    width: 30px;
+    height: 3px;
+    opacity: 0.5;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+}
+
+/* ================= CARDS ================= */
+
+.custom-card {
+    border: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    border-radius: 12px;
+}
+
+.custom-card:hover {
+    transform: translateY(-6px);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    font-size: 0.9rem;
+}
+
+/* ================= POSITION DEMO ================= */
+
+/* STATIC */
+.pos-static {
+    position: static;
+    background: #e9ecef;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid #6c757d;
+}
+
+/* RELATIVE */
+.pos-relative {
+    position: relative;
+    top: 10px;
+    left: 15px;
+    background: #d0ebff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-left: 5px solid #1a6b96;
+}
+
+/* ABSOLUTE */
+.pos-container {
+    position: relative;
+    height: 200px;
+    background: #f8f9fa;
+    margin-bottom: 2rem;
+}
+
+.pos-absolute {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ffe3e3;
+    padding: 1rem;
+    border-left: 5px solid #c0392b;
+}
+
+/* FIXED */
+.pos-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #d4edda;
+    padding: 1rem;
+    border-left: 5px solid #2d6a4f;
+    z-index: 1000;
+}
+
+/* STICKY */
+.pos-sticky {
+    position: sticky;
+    top: 0;
+    background: #fff3cd;
+    padding: 1rem;
+    border-left: 5px solid #a07820;
+    z-index: 100;
+}
+
+/* ================= DEMO ABSOLUTE ================= */
+.demo-absolute-wrap {
+    position: relative;
+    height: 300px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.ref-label {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.abs-box {
+    position: absolute;
+    background: #c0392b;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.abs-tl {
+    top: 10px;
+    left: 10px;
+}
+
+.abs-tr {
+    top: 10px;
+    right: 10px;
+    background: #e74c3c;
+}
+
+.abs-cc {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #c0392b;
+    padding: 0.75rem 1rem;
+}
+
+.abs-bl {
+    bottom: 10px;
+    left: 10px;
+    background: #a93226;
+}
+
+.abs-br {
+    bottom: 10px;
+    right: 10px;
+    background: #922b21;
+}
+
+/* ================= DEMO STICKY ================= */
+.demo-sticky-scroll {
+    height: 400px;
+    overflow-y: auto;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background: #a07820;
+    color: white;
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-bottom: 3px solid #8a6a1a;
+}
+
+.sticky-content {
+    padding: 1rem;
+    background: white;
+}
+
+.sticky-content p {
+    margin: 0.75rem 0;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* ================= DEMO FIXED ================= */
+.demo-fixed-info {
+    background: #e8f5e9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #2d6a4f;
+}
+
+.demo-fixed-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #2d6a4f;
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.demo-fixed-pill i {
+    color: #80c4a0;
+}
+
+/* ================= SITE BRAND ================= */
+.site-brand {
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 1.25rem;
+}
+
+.site-brand span {
+    color: var(--primary);
+}
+
+.site-navbar {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* ================= BACK TO TOP BUTTON ================= */
+.btn-back-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #89cff0 0%, #7ec8e3 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(137, 207, 240, 0.35);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    font-size: 0.65rem;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0;
+    text-align: center;
+    line-height: 1.1;
+    font-weight: 700;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-back-top:hover {
+    background: linear-gradient(135deg, #7ec8e3 0%, #89cff0 100%);
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 8px 20px rgba(137, 207, 240, 0.45);
+    color: white;
+    text-decoration: none;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btn-back-top i {
+    font-size: 1.1rem;
+    margin-bottom: 0.1rem;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .carousel-img {
+        height: 300px;
+    }
+
+    .carousel-caption {
+        padding: 1.5rem;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .demo-sticky-scroll {
+        height: 300px;
+    }
+
+    .demo-absolute-wrap {
+        height: 250px;
+    }
+}
