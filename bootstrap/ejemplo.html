@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mi-primera-estructura-bootstrap</title>
+  //cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+      <a class="navbar-brand" href="#">Mi Sitio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-autoto">
+          >
+            <a class="nav-link active" href="#">Inicio</a>
+          </l/li>
+          >
+            <a class="nav-link" href="#">Servicios</a>
+          </l/li>
+          >
+            <a class="nav-link" href="#">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-5">
+    <section class="text-center mb-5">
+      <h1 class="mb-3">Primera estructura con Bootstrap</h1>
+      <p class="lead">Una base simple, responsive y lista para seguir creciendo.</p>
+      <a href="#" class="btn btn-primary">Comenzar</a>
+    </section>
+
+    <section class="row g-4">
+      <article class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Componente 1</h5>
+            <p class="card-text">Ejemplo de contenido usando tarjetas de Bootstrap.</p>
+            <a href="#" class="btn btn-outline-primary">Ver más</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Componente 2</h5>
+            <p class="card-text">La cuadrícula se adapta automáticamente según el tamaño de pantalla.</p>
+            <a href="#" class="btn btn-outline-primary">Ver más</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Componente 3</h5>
+            <p class="card-text">Puedes ampliar esta base con formularios, modales o tablas.</p>
+            <a href="#" class="btn btn-outline-primary">Ver más</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
