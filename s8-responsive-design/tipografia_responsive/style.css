@@ -1,0 +1,17 @@
+body {
+  font-family: Arial;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  color: darkblue;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+    color: darkred;
+  }
+}

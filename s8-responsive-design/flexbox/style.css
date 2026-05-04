@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #333;
+}
+
+/* Encabezado */
+header {
+  background: #061e32;
+  color: white;
+  text-align: center;
+  padding: 40px 10px;
+}
+
+/* Menú */
+nav {
+  background: #ccc;
+  text-align: center;
+  padding: 20px;
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin: 10px 0;
+  font-size: 18px;
+}
