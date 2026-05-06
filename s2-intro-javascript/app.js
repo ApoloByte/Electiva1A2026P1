@@ -5,9 +5,10 @@ let resultado1 = (3 + 2) * (10 / 2);
 let resultado2 = 3 + 2 * 10 / 2; 
 let resultado3 = (3 + 2) * 10 / 2; 
 
-console.log(resultado1); 
-console.log(resultado2); 
 console.log(resultado3); 
+console.log(resultado2); 
+console.log(resultado1); 
+
 
 // #Ejercicio 5
 console.log("---Indices String---")
@@ -31,3 +32,4 @@ console.log(texto.replaceAll("e", "E")); // Imprime "El dEsarrollo wEb es lo max
 console.log("---Modificacion del casing---")
 console.log(texto.toUpperCase()); // Imprime "EL DESARROLLO WEB ES LO MAXIMO"
 console.log(texto.toLowerCase()); // Imprime "el desarrollo web es lo maximo”
+
