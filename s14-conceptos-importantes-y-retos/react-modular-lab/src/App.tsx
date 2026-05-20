@@ -1,5 +1,6 @@
 import './App.css'
 import { Counter } from './components/Counter.tsx'
+import { useCounter } from './hooks/useCounter.ts'
 
 function App() {
 
