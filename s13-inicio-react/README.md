@@ -9,6 +9,17 @@ En un documento Word con su nombre, defina lo siguiente
 2. useState
 3. useEffect
 
+
+
+
+
+
+
+
+
+
+
+
 # Guía de Ejercicios – Sesión práctica
 
 **Tema:** Listas, Objetos Literales e Interfaces
