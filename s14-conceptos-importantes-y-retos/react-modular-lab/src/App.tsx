@@ -1,5 +1,5 @@
-import "./App.css"
-import { Counter } from "./components/Counter";
+import './App.css'
+import { Counter } from './components/Counter.tsx';
 
 function App() {
 return (
@@ -8,3 +8,4 @@ return (
 	</div>
 );
 }
+export default App
