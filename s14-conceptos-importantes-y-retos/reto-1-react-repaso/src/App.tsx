@@ -4,7 +4,7 @@ import { type Animal } from './interfaces/Animal';
 
 function App() {
   const [animals] = useState<Animal[]>([
-    { name: "perro", age: 3, color: "Blanco y café", isPet: true, height: 0.55 },
+    { name: "Perro", age: 3, color: "Blanco y café", isPet: true, height: 0.55 },
     { name: "Luna", age: 2, color: "Gris atigrado", isPet: true, height: 0.25 },
     { name: "Simba", age: 5, color: "Dorado", isPet: false, height: 1.2 },
     { name: "Copito", age: 1, color: "Blanco", isPet: true, height: 0.15 },
@@ -20,36 +20,31 @@ function App() {
       </h2>
       
       <div style={styles.contenedorTarjetas}>
-        
-        {/* Aquí usamos .map para recorrer la lista */}
         {animals.map((animal, index) => (
           <div key={index} style={styles.tarjeta}>
             <h3 style={styles.nombre}>{animal.name}</h3>
             <hr style={styles.separador} />
             
-            {/* Mostramos cada uno de los valores del objeto */}
             <p style={styles.dato}><strong>Edad:</strong> {animal.age} años</p>
             <p style={styles.dato}><strong>Color:</strong> {animal.color}</p>
             <p style={styles.dato}><strong>Altura:</strong> {animal.height} m</p>
             
-            <div style={styles.contenedorEstado}>
-              <span style={{
-                ...styles.etiqueta,
-                backgroundColor: animal.isPet ? '#dcfce7' : '#fee2e2',
-                color: animal.isPet ? '#15803d' : '#b91c1c'
-              }}>
-                {animal.isPet ? '🏡 Mascota' : '🌲 Salvaje'}
-              </span>
-            </div>
+            {/* OPERADOR TERNARIO EVALUANDO isPet */}
+            {animal.isPet ? (
+              <div style={styles.contenedorEstado}>
+                <span style={styles.etiquetaMascota}>
+                  🏡 Es una Mascota
+                </span>
+              </div>
+            ) : null} {/* Si es false, devuelve null y no muestra nada en pantalla */}
+
           </div>
         ))}
-
       </div>
     </div>
   );
 }
 
-// Estilos
 const styles = {
   contenedorTarjetas: {
     display: 'flex',
@@ -65,7 +60,6 @@ const styles = {
     padding: '20px',
     width: '220px',
     boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)',
-    transition: 'transform 0.2s'
   },
   nombre: {
     margin: '0 0 10px 0',
@@ -87,12 +81,15 @@ const styles = {
     marginTop: '15px',
     textAlign: 'center' as const
   },
-  etiqueta: {
-    padding: '4px 10px',
+  etiquetaMascota: {
+    padding: '6px 12px',
     borderRadius: '20px',
-    fontSize: '12px',
+    fontSize: '13px',
     fontWeight: 'bold' as const,
-    display: 'inline-block'
+    display: 'inline-block',
+    backgroundColor: '#dcfce7',
+    color: '#15803d',
+    border: '1px solid #bbf7d0'
   }
 };
 
