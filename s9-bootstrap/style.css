@@ -33,6 +33,7 @@
     left: 10px;
     z-index: -10;
     background-color: rgb(138, 43, 226, 0.5);
+
 }
 .carousel-item img {
   filter: brightness(60%);
@@ -51,4 +52,5 @@
     opacity: 1;
     transform: translateY(0);
   }
+
 }
