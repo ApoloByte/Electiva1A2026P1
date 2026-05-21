@@ -1,0 +1,15 @@
+h1 { font-size: 24px; }  /* móvil por defecto */
+h2 { font-size: 18px; }
+p  { font-size: 14px; }
+
+@media (min-width: 340px) {
+  h1 { font-size: 32px; } /* tablet */
+  h2 { font-size: 22px; }
+  p  { font-size: 16px; }
+}
+
+@media (min-width: 520px) {
+  h1 { font-size: 48px; } /* escritorio */
+  h2 { font-size: 28px; }
+  p  { font-size: 18px; }
+}

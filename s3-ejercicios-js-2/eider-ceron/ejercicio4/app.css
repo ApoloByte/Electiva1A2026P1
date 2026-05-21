@@ -1,0 +1,13 @@
+.resaltado { background: yellow; }
+
+.activo { color: white; background: #0077cc; }
+
+.negrita { font-weight: bold; }
+
+
+.tareas li { margin-bottom: 5px; }
+
+.activo {
+    color: greenyellow;
+    font-weight: bold;
+}
