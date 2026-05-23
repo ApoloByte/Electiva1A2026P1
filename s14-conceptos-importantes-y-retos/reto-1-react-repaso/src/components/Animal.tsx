@@ -1,36 +1,63 @@
-import React, { use } from 'react'
-import { useState } from 'react'
-
+import { useState, useEffect } from 'react'
+ 
 interface Animal {
-    name: String;
+    name: string;
     age: number;
-    color: String;
+    color: string;
     isPet: boolean;
     height: number
 }
 export const Animal = () => {
 
-    const [animal, setAnimal] = useState<Animal[]>([]);
-    const [texto, setTexto] = useState('');
- 
-    const addAnimal = () => {
-        if (texto.trim() === '') return;
+    const [animal, setAnimal] = useState<Animal[]>([
+        { name: 'Max', age: 5, color: 'white', isPet: false, height: 45 },
+        { name: 'Zaira', age: 3, color: 'black', isPet: true, height: 30 },
+        { name: 'Leon', age: 8, color: 'golden', isPet: true, height: 120 },
+        { name: 'Luna', age: 2, color: 'gray', isPet: true, height: 25 },
+        { name: 'Ben', age: 4, color: 'brown', isPet: false, height: 50 }
+    ]);
 
-        const nuevoAnimal:  Animal = {
-            name: texto,
-            age: 0,
-            color: 'Desconocido',
-            isPet: false,
-            height: 0
-        };
+    const fetchAnimals = async () => {
+        try {
+            const response = await fetch('https://electiva5-api.apolobyte.top/animals');
+            const data: Animal[] = await response.json();
 
-        setAnimal([...animal, nuevoAnimal]);
-        setTexto('');
-    }
+            setAnimal((prevAnimals) => [...prevAnimals, ...data]);
+        } catch (error) {
+            console.error('Error al obtener los animales:', error);
+        }
+    };
+
+    useEffect(() => {
+        fetchAnimals();
+    }, []);
+
+
     return (
-        <div>
-            <h1>HOLI XD</h1>
+        <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
+            <h1>SOLUCION RETO 1 REACT XD</h1>
 
+            <section>
+                <h3>2 mensaje de bienvenida</h3>
+                <p>BIENVENIDO CHAVAL</p>
+            </section>
+
+            <section>
+                <h3>5 Recorrer la lista de animales</h3>
+
+                {animal.map((animal, index) => (
+                    animal.isPet ? (
+                        <div key={index} style={{ marginBottom: '15px' }}>
+                            <h4>Animal {index + 1}</h4>
+                            <p>Nombre: {animal.name}</p>
+                            <p>Edad: {animal.age}</p>
+                            <p>Color: {animal.color}</p>
+                            <p>Es mascota: Sí</p>
+                            <p>Estatura: {animal.height} cm</p>
+                        </div>
+                    ) : null
+                ))}
+            </section>
         </div>
     )
 }
