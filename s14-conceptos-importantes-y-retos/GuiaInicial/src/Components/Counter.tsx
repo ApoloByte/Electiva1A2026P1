@@ -1,4 +1,6 @@
 import { useCounter } from "../hooks/useCounter";
+//traemos el componente 
+import { StyledButton } from "./StyledButton";
 
 export const Counter = () => {
 
@@ -6,28 +8,29 @@ export const Counter = () => {
 
     return (
         <div>
+
             <h3>
                 Counter
-                <small>{' ' + count}</small>
+                <small>{" " + count}</small>
             </h3>
 
             <div className="flex gap-4">
 
-                <button
-                    className="p-2 bg-blue-500 rounded-xs w-10 text-white"
-                    onClick={() => increaseBy(+1)}
-                >
-                    +1
-                </button>
+                
+                <StyledButton
+                    label={"+1"}
+                    color="bg-pink-500"
+                    handleClick={() => increaseBy(1)}
+                />
 
-                <button
-                    className="p-2 bg-blue-500 rounded-xs w-10 text-white"
-                    onClick={() => increaseBy(-1)}
-                >
-                    -1
-                </button>
+                <StyledButton
+                    label={"-1"}
+                    color="bg-red-500"
+                    handleClick={() => increaseBy(-1)}
+                />
 
             </div>
+
         </div>
     );
-};
+}
