@@ -1,0 +1,6 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+// tarjeta simple para mostrar datos de un producto
+export const ProductCard = ({ product }) => {
+    return (_jsxs("article", { className: "product-card", children: [_jsx("img", { src: product.imageUrl, alt: product.name }), _jsxs("div", { className: "product-card-body", children: [_jsx("h2", { className: "product-name", children: product.name }), _jsx("p", { className: "product-category", children: product.category.name }), _jsx("p", { className: "product-description", children: product.description }), _jsxs("p", { className: "product-meta", children: [_jsx("strong", { children: "Precio:" }), " $", product.price.toLocaleString('es-CO')] }), _jsxs("p", { className: "product-meta", children: [_jsx("strong", { children: "Cantidad:" }), " ", product.quantity] }), _jsxs("p", { className: "product-meta", children: [_jsx("strong", { children: "Dimensiones:" }), " ", product.height, " x ", product.width, " x ", product.length, " cm"] }), _jsx("p", { className: `status-tag ${product.isEnabled ? 'status-enabled' : 'status-disabled'}`, children: product.isEnabled ? 'Habilitado' : 'Deshabilitado' })] })] }));
+};
+//# sourceMappingURL=ProductCard.js.map
