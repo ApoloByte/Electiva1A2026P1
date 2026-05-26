@@ -1,0 +1,6 @@
+packages:
+  - 'reto-1-react-repaso'
+  - 'reto-2-react-repaso'
+  - 'reto-3-react-repaso'
+allowBuilds:
+  esbuild: set this to true or false

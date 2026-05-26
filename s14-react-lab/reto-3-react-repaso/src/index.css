@@ -1,0 +1,25 @@
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  padding: 2rem;
+  background: #f5f5f5;
+}
+
+.product-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  max-width: 120px;
+  border-radius: 4px;
+}
+
+button {
+  margin: 1rem 0.5rem 1rem 0;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}

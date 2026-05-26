@@ -1,0 +1,11 @@
+{
+  "name": "retos-elec1",
+  "private": true,
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "dev:1": "pnpm --filter reto-1-react-repaso dev",
+    "dev:2": "pnpm --filter reto-2-react-repaso dev",
+    "dev:3": "pnpm --filter reto-3-react-repaso dev",
+    "build": "pnpm -r build"
+  }
+}
