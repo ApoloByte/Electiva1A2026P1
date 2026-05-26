@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-interface Animal {
+export interface Animal {
   name: string;
   age: number;
   color: string;
@@ -16,13 +16,13 @@ const initialAnimals: Animal[] = [
   { name: 'Buddy', age: 4, color: 'Dorado', isPet: true, height: 50 },
 ];
 
-export const Animal = () => {
+export const useAnimals = () => {
   const [animals, setAnimals] = useState<Animal[]>(initialAnimals);
 
   const fetchAnimals = async () => {
     try {
       const response = await fetch('https://electiva5-api.apolobyte.top/animals');
-      const data = await response.json();
+      const data: Animal[] = await response.json();
       setAnimals(data);
     } catch (error) {
       console.error('Error fetching animals:', error);
@@ -33,22 +33,5 @@ export const Animal = () => {
     fetchAnimals();
   }, []);
 
-  return (
-    <div>
-      <h2>Mensaje de bienvenida</h2>
-      <p>¡Bienvenido a la lista de animales!</p>
-
-      <h2>Recorrer la lista de animales</h2>
-      {animals.map((animal, index) => (
-        <div key={index}>
-          <strong>Animal {index + 1}</strong>
-          <p>Nombre: {animal.name}</p>
-          <p>Edad: {animal.age}</p>
-          <p>Color: {animal.color}</p>
-          {animal.isPet ? <p>Es mascota: Sí</p> : null}
-          <p>Altura: {animal.height} cm</p>
-        </div>
-      ))}
-    </div>
-  );
+  return { animals };
 };

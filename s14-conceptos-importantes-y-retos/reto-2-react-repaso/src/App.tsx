@@ -1,10 +1,10 @@
 import './App.css'
-import { Animal } from './components/Animal'
+import { ImageManager } from './components/ImageManager'
 
 function App() {
   return (
     <div>
-      <Animal />
+      <ImageManager />
     </div>
   )
 }
