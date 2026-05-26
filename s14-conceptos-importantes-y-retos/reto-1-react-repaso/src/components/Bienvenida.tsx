@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-// 1. Interface Animal
+
 interface Animal {
   id?: number; 
   name: string;
@@ -22,7 +22,7 @@ export const Bienvenida = () => {
   const [apiAnimals, setApiAnimals] = useState<Animal[]>([]);
   const [loading, setLoading] = useState(false);
 
-  // Función para que el Checkbox local funcione y se vea el uso del ternario
+
   const toggleIsPet = (id: number) => {
     setAnimals(animals.map(animal => 
       animal.id === id ? { ...animal, isPet: !animal.isPet } : animal
