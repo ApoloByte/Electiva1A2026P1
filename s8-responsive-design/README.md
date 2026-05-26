@@ -33,7 +33,7 @@ A continuación se presenta una actividad de consulta que le permitirá aprender
             
     - cree diferentes carpetas para cada tema investigado, ejemplo: `s-x-tema/media-queries`; y dentro de estas carpetas incluya los diferentes archivos: index.html, style.css y script.js que darán forma al ejemplo
 
-**Pregunta problema:** ¿Cómo debe transformarse la estructura de una interfaz principal para funcionar correctamente en escritorio, tableta y móvil?
+**Pregunta problema:** ¿Cómo debe transformarse la estructura de una interfaz principal para funcionar correctamente en escritorio, tableta y móvil?
 
 ## **Subtemas a investigar:**
 
@@ -41,7 +41,7 @@ A continuación se presenta una actividad de consulta que le permitirá aprender
 
 ### Para los temas que siguen, aplique un esfuerzo medio, busque almenos 1 ejemplo además de la lectura sugerida
 
-- Uso de etiquetas semánticas como `header`, `nav` y `main`
+- Uso de etiquetas semánticas como `header`, `nav` y `main`
 - Uso de media queries para cambiar distribución del menú o del encabezado
     
     > un primer acercamiento al tema lo puede encontrar [aquí](http://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design#media_queries); si desea utilizar el traductor del navegador, procure intercalar entre inglés y español para entender los nombres especialmente dentro de los conceptos que llevan al código, ya que muchas veces su traducción literal carece de sentido en español, ejemplo: media queries = consulta de los medios
@@ -72,3 +72,5 @@ alias ssh-dir='cd ~/.ssh'
 alias git-ssh-config='cat ~/.ssh/config'
 alias git-id-ssh='cat ~/.ssh/id_victor_pinto.pub'
 alias git-config-user='git config --global user.name "Victor Pinto" && git config --global user.email victorpinto@gmail>
+```
+
