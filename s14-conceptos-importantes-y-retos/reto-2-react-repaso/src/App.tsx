@@ -1,4 +1,4 @@
-import ImageManager from './ImageManager';
+import ImageManager from './components/ImageManager';
 
 export default function App() {
   return (
