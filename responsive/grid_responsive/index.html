@@ -1,0 +1,43 @@
+<header> Restaurante Diana</header>
+<nav> Menú</nav>
+<main> Platos principales</main>
+
+
+<style>
+ body {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu content";
+}
+
+header {
+  grid-area: header;
+  background: orange;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  grid-area: menu;
+  background: lightgreen;
+  padding: 20px;
+}
+
+main {
+  grid-area: content;
+  background: lightcoral;
+  padding: 20px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  body {
+    grid-template-areas:
+      "header"
+      "menu"
+      "content";
+  }
+}
+
+

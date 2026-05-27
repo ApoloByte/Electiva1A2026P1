@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+/* FLEXBOX */
+.container {
+    display: flex; /* activa flexbox */
+}
+
+.caja {
+    flex: 1;
+    background: lightgreen;
+    margin: 5px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Media Query */
+@media (max-width: 1000px) {
+    .container {
+        flex-direction: column; /* cambia a vertical */
+    }
+}

@@ -1,0 +1,55 @@
+/* Estilo normal (computador) */
+body {
+    margin: 0;
+    font-family: Arial;
+    background: yellow; 
+}
+
+header {
+    background: red; 
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background: green; 
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+main {
+    background: orange; 
+    padding: 20px;
+    text-align: center;
+}
+
+/*MEDIA QUERIES */
+@media (max-width: 1000px) {
+
+    body {
+        background: lightblue; 
+    }
+
+    header {
+        background: purple; 
+    }
+
+    nav {
+        background: black; 
+    }
+
+    nav a {
+        display: block; 
+    }
+
+    main {
+        background: pink; 
+    }
+}
