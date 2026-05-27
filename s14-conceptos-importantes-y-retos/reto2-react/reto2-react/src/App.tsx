@@ -1,4 +1,4 @@
-// Importamos desde la nueva ubicación
+
 import ImageManager from './components/ImageManager';
 
 export default function App() {

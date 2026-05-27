@@ -6,7 +6,7 @@ export default function App() {
   const { products, getProductsFromAPI } = useProducts();
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
+    <div className="min-h-screen bg-gray-600 p-8">
       
       <h1 className="text-4xl font-bold text-center text-blue-700 mb-8">
         Catálogo de Productos
@@ -16,7 +16,7 @@ export default function App() {
       <div className="flex justify-center mb-8">
         <button 
           onClick={getProductsFromAPI}
-          className="bg-blue-600 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded shadow"
+          className="bg-blue-950 hover:bg-blue-200 text-amber-100 font-bold py-2 px-4 rounded shadow"
         >
           Cargar Productos desde la API
         </button>
