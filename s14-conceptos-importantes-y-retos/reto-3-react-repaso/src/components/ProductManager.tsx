@@ -12,8 +12,8 @@ interface Category {
 interface Product {
   name: string;
   description: string;
-  image_url: string; // Usamos el nombre de la captura del profesor
-  category: Category; // Interfaz anidada
+  image_url: string; 
+  category: Category; 
   quantity: number;
   price: number;
   height: number;

@@ -12,7 +12,6 @@ export const ImageManager = () => {
       const data = await response.json();
       
       // 4. Con la función setImages del useState, actualice la lista dentro de la función asíncrona
-      // Ojo: entramos a data.images porque el JSON real viene envuelto en un objeto
       setImages(data.images);
     } catch (error) {
       console.error('Error al recibir la lista de imágenes desde el servidor:', error);
@@ -24,12 +23,11 @@ export const ImageManager = () => {
     fetchImageList();
   }, []);
 
-  // Ruta base entregada por el profesor en la guía para construir las imágenes
   const baseUrl = 'https://electiva5-api.apolobyte.top/uploads/';
 
   return (
     <div style={{ fontFamily: 'sans-serif', padding: '10px' }}>
-      {/* 6. El resultado esperado se presenta en la imagen (Títulos idénticos a la guía) */}
+      {/* 6. El resultado esperado se presenta en la imagen */}
       <h1 style={{ fontSize: '24px', fontWeight: 'bold', margin: '5px 0' }}>
         Administrador de imágenes
       </h1>
@@ -50,13 +48,13 @@ export const ImageManager = () => {
                 {imgName}
               </span>
               
-              {/* Muestra el componente img utilizando la ruta completa combinando baseUrl y el nombre de la foto */}
+              {/* Muestra el componente img utilizando la ruta */}
               <img 
                 src={`${baseUrl}${imgName}`} 
                 alt={imgName} 
                 style={{ 
                   width: '100%', 
-                  maxWidth: '500px', // Acotamos el tamaño para que se vea cómodo e idéntico al ejemplo
+                  maxWidth: '500px', 
                   display: 'block', 
                   borderRadius: '4px' 
                 }} 

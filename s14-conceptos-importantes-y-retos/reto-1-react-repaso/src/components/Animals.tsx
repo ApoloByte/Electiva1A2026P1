@@ -7,7 +7,7 @@ interface Animal {
   age: number;
   color: string;
   isPet: boolean;
-  height: number; // Requerido por la guía
+  height: number; 
 }
 
 export const AnimalsManager = () => {
@@ -26,7 +26,7 @@ export const AnimalsManager = () => {
       const response = await fetch('https://electiva5-api.apolobyte.top/animals');
       const data = await response.json();
       
-      // Mapeamos el JSON real de la API ([{"name":"Apolo",...}])
+      // Mapeamos el JSON real de la API 
       const apiAnimals: Animal[] = data.map((item: any) => ({
         name: item.name,
         age: Number(item.age),
