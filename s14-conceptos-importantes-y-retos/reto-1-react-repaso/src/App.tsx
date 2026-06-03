@@ -1,10 +1,12 @@
 import './App.css'
-import { Animal } from './components/Animal'
+
+import { AnimalComponent } from './components/Animal'
 
 function App() {
   return (
     <div>
-      <Animal />
+      {/* Usamos el componente con su nuevo nombre */}
+      <AnimalComponent />
     </div>
   )
 }

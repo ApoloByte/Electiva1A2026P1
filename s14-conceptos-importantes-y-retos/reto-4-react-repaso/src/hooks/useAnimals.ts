@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+
 
 export interface Animal {
   name: string;
@@ -22,16 +23,16 @@ export const useAnimals = () => {
   const fetchAnimals = async () => {
     try {
       const response = await fetch('https://electiva5-api.apolobyte.top/animals');
-      const data: Animal[] = await response.json();
+      const data = await response.json();
       setAnimals(data);
     } catch (error) {
       console.error('Error fetching animals:', error);
     }
   };
 
-  useEffect(() => {
-    fetchAnimals();
-  }, []);
 
-  return { animals };
+  return {
+    animals,
+    fetchAnimals,
+  };
 };

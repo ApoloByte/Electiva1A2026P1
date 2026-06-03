@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react'; 
 
-interface Animal {
+export interface Animal {
   name: string;
   age: number;
   color: string;
@@ -16,7 +16,7 @@ const initialAnimals: Animal[] = [
   { name: 'Buddy', age: 4, color: 'Dorado', isPet: true, height: 50 },
 ];
 
-export const Animal = () => {
+export const AnimalComponent = () => { // Nota: Cambié el nombre a AnimalComponent para evitar conflictos con la interfaz Animal
   const [animals, setAnimals] = useState<Animal[]>(initialAnimals);
 
   const fetchAnimals = async () => {
@@ -29,18 +29,24 @@ export const Animal = () => {
     }
   };
 
-  useEffect(() => {
-    fetchAnimals();
-  }, []);
+
 
   return (
     <div>
       <h2>Mensaje de bienvenida</h2>
       <p>¡Bienvenido a la lista de animales!</p>
 
+     
+      <button 
+        onClick={fetchAnimals} 
+        style={{ margin: '10px 0', padding: '8px 16px', cursor: 'pointer' }}
+      >
+        Cargar lista de la API
+      </button>
+
       <h2>Recorrer la lista de animales</h2>
       {animals.map((animal, index) => (
-        <div key={index}>
+        <div key={index} style={{ borderBottom: '1px solid #ccc', padding: '10px 0' }}>
           <strong>Animal {index + 1}</strong>
           <p>Nombre: {animal.name}</p>
           <p>Edad: {animal.age}</p>
